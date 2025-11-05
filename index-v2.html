@@ -539,8 +539,8 @@
             <div class="stats-text" id="resultsStats">
                 Loading dictionary...
             </div>
-            <div class="stats-text">
-                <strong>5,000+</strong> terms · <strong>Multiple</strong> sources · <strong>1,600+</strong> examples
+            <div class="stats-text" id="totalStats">
+                Loading statistics...
             </div>
         </div>
     </div>
@@ -575,52 +575,35 @@
         };
 
         // Load unified dictionary
-        // NOTE: Replace with actual unified-dictionary.json when ready
-        // For now, we'll create a sample structure from existing data
         loadDictionary();
 
         async function loadDictionary() {
             try {
-                // TODO: Load unified-dictionary.json
-                // For now, create sample data showing the expected structure
-                const response = await fetch('Glossary-of-Dutch-Procedural-Terminology.json');
-                const glossaryData = await response.json();
+                console.log('Loading unified dictionary...');
+                const response = await fetch('unified-dictionary.json');
 
-                // Transform to unified structure (temporary - you'll replace this)
-                dictionaryData = transformToUnified(glossaryData);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                dictionaryData = await response.json();
+                console.log(`✓ Loaded ${dictionaryData.length} terms`);
 
                 displayResults(dictionaryData);
                 updateStats(dictionaryData.length, dictionaryData.length);
             } catch (error) {
+                console.error('Error loading dictionary:', error);
                 document.getElementById('resultsContainer').innerHTML = `
                     <div class="no-results">
                         <div class="no-results-icon">⚠️</div>
                         <h2>Error loading dictionary</h2>
-                        <p>Please ensure unified-dictionary.json is available.</p>
+                        <p>${error.message}</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">
+                            Make sure unified-dictionary.json is in the same directory.
+                        </p>
                     </div>
                 `;
             }
-        }
-
-        // Temporary transformer (remove when unified dictionary is ready)
-        function transformToUnified(glossaryData) {
-            return glossaryData.map((entry, index) => ({
-                id: `term_${String(index + 1).padStart(5, '0')}`,
-                term: entry.source,
-                lang: entry['lang-source'],
-                translations: [{
-                    translation: entry.target,
-                    lang: entry['lang-target'],
-                    definition: null,
-                    source: entry.author,
-                    'source-type': 'Civil Procedure Glossary',
-                    license: entry.license,
-                    'sme-reviewed': entry['sme-reviewed'] === 'yes',
-                    context: 'procedural law'
-                }],
-                examples: [],
-                metadata: {}
-            }));
         }
 
         // Search functionality
@@ -824,6 +807,20 @@
             document.getElementById('resultsStats').innerHTML = `
                 Showing <strong>${showing}</strong> of <strong>${total}</strong> terms
             `;
+
+            // Update total stats
+            if (dictionaryData.length > 0) {
+                const totalTranslations = dictionaryData.reduce((sum, term) => sum + term.translations.length, 0);
+                const totalExamples = dictionaryData.reduce((sum, term) => sum + term.examples.length, 0);
+                const termsWithMultipleTranslations = dictionaryData.filter(t => t.translations.length > 1).length;
+
+                document.getElementById('totalStats').innerHTML = `
+                    <strong>${total.toLocaleString()}</strong> terms ·
+                    <strong>${totalTranslations.toLocaleString()}</strong> translations ·
+                    <strong>${totalExamples.toLocaleString()}</strong> examples
+                    ${termsWithMultipleTranslations > 0 ? `· <strong>${termsWithMultipleTranslations}</strong> with multiple sources` : ''}
+                `;
+            }
         }
 
         function showPremiumModal() {
