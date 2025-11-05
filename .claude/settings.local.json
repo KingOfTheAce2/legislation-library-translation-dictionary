@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(python:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(head:*)",
+      "Bash(fix_output.log)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

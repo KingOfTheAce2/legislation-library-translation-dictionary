@@ -1,1 +1,11 @@
 *.pdf
+
+# Build and cache directories
+npm-cache/
+node_modules/
+
+# Claude Code
+.claude/
+
+# Backup files
+*-BACKUP.json
