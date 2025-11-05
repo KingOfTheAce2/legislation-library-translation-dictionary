@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dutch Code of Civil Procedure (Wetboek van Burgerlijke Rechtsvordering) Book 1 - NL-EN Bilingual Translation">
+    <meta name="keywords" content="Dutch law, civil procedure, Rv, Burgerlijke Rechtsvordering, legal translation, NL-EN">
+    <title>Code of Civil Procedure - Book 1 | NL-EN Translation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #154273;
+            --secondary: #39870c;
+            --accent: #007bc7;
+            --bg: #ffffff;
+            --bg-secondary: #f3f3f3;
+            --text: #333333;
+            --text-light: #767676;
+            --border: #cccccc;
+        }
+
+        body {
+            font-family: 'RO Sans', 'Segoe UI', Tahoma, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg-secondary);
+        }
+
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .header .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .nav-bar {
+            background: white;
+            border-bottom: 3px solid var(--secondary);
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            background: var(--bg-secondary);
+        }
+
+        .nav-link.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+            margin: 0 0.5rem;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 80px;
+        }
+
+        .sidebar h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding: 0.25rem;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+        }
+
+        .lang-btn {
+            flex: 1;
+            padding: 0.6rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .search-box {
+            margin-bottom: 1.5rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.6rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .filters label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .filters input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        .article-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .document-header {
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .document-header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .document-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+        }
+
+        .document-meta span {
+            display: inline-block;
+            margin-right: 1.5rem;
+        }
+
+        .article {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            border-left: 4px solid var(--bg-secondary);
+            transition: border-color 0.3s;
+        }
+
+        .article:hover {
+            border-left-color: var(--accent);
+        }
+
+        .article.highlight {
+            background: #fffbea;
+            border-left-color: var(--secondary);
+        }
+
+        .article-title {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-text {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        .article-nl {
+            color: var(--text);
+        }
+
+        .article-en {
+            color: #2d3748;
+            font-style: italic;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+            margin-top: 0.5rem;
+        }
+
+        .lang-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 1.5rem;
+            margin: 2rem -2rem 1.5rem -2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .stats-bar {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .stat {
+            color: var(--text-light);
+        }
+
+        .stat strong {
+            color: var(--primary);
+        }
+
+        .footer {
+            max-width: 1200px;
+            margin: 3rem auto 2rem;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            background: white;
+            border-radius: 4px;
+        }
+
+        .attribution {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .license-badge {
+            display: inline-block;
+            background: #e6f7ff;
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin: 0.5rem 0.25rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .back-to-top.visible {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .section-title {
+                margin-left: -1rem;
+                margin-right: -1rem;
+            }
+
+            .article-container {
+                padding: 1rem;
+            }
+
+            .nav-content {
+                gap: 0.5rem;
+            }
+        }
+
+        .highlight-search {
+            background: #fef08a;
+            padding: 0 0.2rem;
+            border-radius: 2px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Code of Civil Procedure</h1>
+            <p class="subtitle">Wetboek van Burgerlijke Rechtsvordering - NL-EN Bilingual Translation</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-link">Legal Dictionary</a>
+            <a href="legislation.html" class="nav-link active">Legislation Library</a>
+            <a href="https://wetten.overheid.nl/BWBR0001827/2025-01-01" class="nav-link" target="_blank">Official Dutch Text</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <a href="legislation.html">Legislation</a>
+            <span>›</span>
+            <strong>Code of Civil Procedure - Book 1</strong>
+        </div>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h3>View Options</h3>
+
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-view="both">Both</button>
+                    <button class="lang-btn" data-view="nl">NL</button>
+                    <button class="lang-btn" data-view="en">EN</button>
+                </div>
+
+                <div class="search-box">
+                    <input type="search" id="searchInput" placeholder="Search in text...">
+                </div>
+
+                <div class="filters" style="margin-bottom: 1rem;">
+                    <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--primary);">
+                        Book Selection
+                    </label>
+                    <select id="bookFilter" style="width: 100%; padding: 0.6rem; border: 2px solid var(--border); border-radius: 4px; font-size: 0.9rem;">
+                        <option value="all">All Books (Complete)</option>
+                        <option value="book1">Book 1 - Procedure</option>
+                        <option value="book2-3">Books 2-3 - Enforcement</option>
+                        <option value="book4">Book 4 - Arbitration</option>
+                    </select>
+                </div>
+
+                <div class="filters">
+                    <label>
+                        <input type="checkbox" id="highlightSearch" checked>
+                        Highlight search results
+                    </label>
+                </div>
+            </aside>
+
+            <main class="article-container">
+                <div class="document-header">
+                    <h2>CODE OF CIVIL PROCEDURE - ALL BOOKS</h2>
+                    <p><strong>Wetboek van Burgerlijke Rechtsvordering - Complete NL-EN Translation</strong></p>
+                    <div class="document-meta">
+                        <span><strong>Effective:</strong> 1 January 2025</span>
+                        <span><strong>BWBR:</strong> 0001827</span>
+                        <span><strong>Translation:</strong> Burrough/Machon/Oranje/Frakes/Visser</span>
+                    </div>
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat"><strong id="totalArticles">0</strong> translation segments</div>
+                    <div class="stat"><strong id="visibleArticles">0</strong> currently displayed</div>
+                    <div class="stat">Subject Matter Expert Reviewed</div>
+                </div>
+
+                <div id="articlesContainer">
+                    <div class="no-results">Loading articles...</div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <div class="attribution">
+                <strong>Translation:</strong> Burrough / Machon / Oranje / Frakes / Visser<br>
+                <strong>Official Source:</strong> <a href="https://wetten.overheid.nl/BWBR0001827/2025-01-01" target="_blank" style="color: var(--accent);">wetten.overheid.nl</a>
+            </div>
+            <div>
+                <span class="license-badge">CC BY 4.0</span>
+                <span class="license-badge">Subject Matter Expert Reviewed</span>
+            </div>
+            <p style="margin-top: 1rem;">Part of the <a href="index.html" style="color: var(--accent);">Legislation Library Translation Project</a></p>
+        </footer>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+    <script>
+        let articlesData = [];
+        let currentView = 'both';
+        let searchTerm = '';
+        let currentBook = 'all';
+
+        // Load articles data - load combined file with all books
+        fetch('i8n/NL-EN-civil-procedure-all.json')
+            .then(response => response.json())
+            .then(data => {
+                articlesData = data;
+                document.getElementById('totalArticles').textContent = data.length.toLocaleString();
+                displayArticles();
+            })
+            .catch(error => {
+                document.getElementById('articlesContainer').innerHTML =
+                    '<div class="no-results">Error loading articles. Please refresh the page.</div>';
+                console.error('Error:', error);
+            });
+
+        // Language toggle
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentView = this.dataset.view;
+                displayArticles();
+            });
+        });
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            searchTerm = this.value.toLowerCase().trim();
+            displayArticles();
+        });
+
+        // Book filter
+        document.getElementById('bookFilter').addEventListener('change', function() {
+            currentBook = this.value;
+            displayArticles();
+        });
+
+        function displayArticles() {
+            const container = document.getElementById('articlesContainer');
+
+            // Filter articles based on book selection
+            let filtered = articlesData;
+            if (currentBook !== 'all') {
+                if (currentBook === 'book1') {
+                    filtered = articlesData.filter(article =>
+                        article.document === 'Wetboek van Burgerlijke Rechtsvordering - Book 1'
+                    );
+                } else if (currentBook === 'book2-3') {
+                    filtered = articlesData.filter(article =>
+                        article.document === 'Wetboek van Burgerlijke Rechtsvordering - Books 2-3'
+                    );
+                } else if (currentBook === 'book4') {
+                    filtered = articlesData.filter(article =>
+                        article.document === 'Wetboek van Burgerlijke Rechtsvordering - Book 4'
+                    );
+                }
+            }
+
+            // Filter based on search
+            if (searchTerm) {
+                filtered = filtered.filter(article =>
+                    article.source.toLowerCase().includes(searchTerm) ||
+                    article.target.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            document.getElementById('visibleArticles').textContent = filtered.length.toLocaleString();
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="no-results">No articles found matching your search.</div>';
+                return;
+            }
+
+            let currentSection = '';
+            let html = '';
+
+            filtered.forEach((article, index) => {
+                // Detect section titles (all caps)
+                const isSection = article.source === article.source.toUpperCase() &&
+                                  article.source.length > 20;
+
+                if (isSection && currentSection !== article.source) {
+                    currentSection = article.source;
+                    html += `<div class="section-title">${escapeHtml(article.target)}<br><small style="opacity: 0.9; font-size: 0.9rem;">${escapeHtml(article.source)}</small></div>`;
+                } else {
+                    const hasMatch = searchTerm && (
+                        article.source.toLowerCase().includes(searchTerm) ||
+                        article.target.toLowerCase().includes(searchTerm)
+                    );
+
+                    const highlightClass = hasMatch ? 'highlight' : '';
+
+                    html += `<div class="article ${highlightClass}">`;
+
+                    if (currentView === 'both' || currentView === 'nl') {
+                        html += `
+                            <div class="article-text article-nl">
+                                <span class="lang-label">Nederlands</span><br>
+                                ${highlightText(escapeHtml(article.source), searchTerm)}
+                            </div>
+                        `;
+                    }
+
+                    if (currentView === 'both' || currentView === 'en') {
+                        html += `
+                            <div class="article-text article-en">
+                                <span class="lang-label">English</span><br>
+                                ${highlightText(escapeHtml(article.target), searchTerm)}
+                            </div>
+                        `;
+                    }
+
+                    html += `</div>`;
+                }
+            });
+
+            container.innerHTML = html;
+        }
+
+        function highlightText(text, term) {
+            if (!term || !document.getElementById('highlightSearch').checked) return text;
+
+            const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+            return text.replace(regex, '<span class="highlight-search">$1</span>');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            // Ctrl/Cmd + F to focus search
+            if ((event.ctrlKey || event.metaKey) && event.key === 'f') {
+                event.preventDefault();
+                document.getElementById('searchInput').focus();
+            }
+        });
+    </script>
+</body>
+</html>

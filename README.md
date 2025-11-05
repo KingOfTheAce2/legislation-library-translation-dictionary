@@ -1,12 +1,14 @@
-# ⚖️ Multilingual Legal Dictionary & Translation Library
+# ⚖️ Multilingual Legal Dictionary & Legislation Library
 
-A professional multilingual legal translation resource covering Dutch legal terminology across multiple legal domains and languages.
+A professional multilingual legal translation resource covering Dutch legal terminology and complete legislation translations.
 
 **[📖 View the Dictionary](https://kingoftheace2.github.io/legislation-library-translation-dictionary/)**
+**[📜 View Legislation Library](https://kingoftheace2.github.io/legislation-library-translation-dictionary/legislation.html)**
 
 ## 📊 Overview
 
 - **650+ professional legal terms** across multiple domains
+- **3,118 legislation translation segments** - Dutch Code of Civil Procedure (Complete, optimized)
 - **Subject Matter Expert reviewed** by legal professionals
 - **Multilingual support** (NL ↔ EN, FR, DE, ES, and monolingual NL)
 - **Open licenses** (CC BY 4.0, CC0) - free and open access
@@ -14,11 +16,25 @@ A professional multilingual legal translation resource covering Dutch legal term
 
 ## ✨ Features
 
-### 🔍 Smart Search
+### 📚 Two Complementary Resources
+
+#### 🔍 Legal Dictionary
 - **Multilingual search**: Search in Dutch, English, French, German, or Spanish
+- **650+ professional legal terms** with Subject Matter Expert review
 - **Real-time filtering**: Instant results as you type
-- **Relevance sorting**: Most relevant matches first
-- **Alphabetical sorting**: Browse terms A-Z
+- **Contextual translations** and comprehensive definitions
+- **Monolingual dictionary** for in-depth term explanations
+
+#### 📜 Legislation Library
+- **Complete legislation translations**: Dutch Code of Civil Procedure - All Books (NL-EN)
+- **3,118 optimized translation segments** professionally translated (originally 4,252, merged for readability)
+  - Complete coverage: Books 1, 2-3, and 4
+  - Article numbers integrated with text for better readability
+  - Formatted like official wetten.overheid.nl
+- **Side-by-side viewing**: Compare Dutch and English texts
+- **Full-text search**: Find specific articles and provisions
+- **Book filtering**: View individual books or complete code
+- **Based on official text**: Synchronized with wetten.overheid.nl
 
 ### 📱 User Experience
 - **Responsive design**: Works on desktop, tablet, and mobile
@@ -27,16 +43,16 @@ A professional multilingual legal translation resource covering Dutch legal term
 - **Offline capable**: Works without internet after first load
 
 ### 🎯 Professional Quality
-- All terms reviewed by Subject Matter Experts
+- All terms and translations reviewed by Subject Matter Experts
 - Proper linguistic attribution
 - Clear source and target language markers
-- Contextual translations and comprehensive definitions
-- Monolingual dictionary for in-depth term explanations
+- Professional translation by legal experts
 
 ## 🚀 Quick Start
 
 ### View Online
-Visit the live dictionary at: `https://kingoftheace2.github.io/legislation-library-translation-dictionary/`
+- **Legal Dictionary**: `https://kingoftheace2.github.io/legislation-library-translation-dictionary/`
+- **Legislation Library**: `https://kingoftheace2.github.io/legislation-library-translation-dictionary/legislation.html`
 
 ### Use Locally
 ```bash
@@ -44,7 +60,8 @@ Visit the live dictionary at: `https://kingoftheace2.github.io/legislation-libra
 git clone https://github.com/kingoftheace2/legislation-library-translation-dictionary.git
 
 # Open in browser
-open index.html
+open index.html              # For legal dictionary
+open legislation.html        # For legislation library
 ```
 
 No build process required - it's pure HTML/CSS/JS!
@@ -52,28 +69,31 @@ No build process required - it's pure HTML/CSS/JS!
 ## 📖 Usage Examples
 
 ### For Legal Professionals
-- Translate Dutch legal documents across multiple languages
+- **Dictionary**: Translate Dutch legal documents across multiple languages
+- **Legislation**: Reference bilingual Code of Civil Procedure provisions
 - Understand Dutch legal terms with comprehensive definitions
 - Standardize translations across your practice
 - Access subject matter expert-reviewed terminology
 
 ### For Translators
-- Reference guide for legal translation work across NL, EN, FR, DE, ES
+- **Dictionary**: Reference guide for legal translation work across NL, EN, FR, DE, ES
+- **Legislation**: See how legal professionals translate procedural law
 - Quality assurance for legal translations
 - Terminology consistency checking
-- Monolingual definitions for deeper understanding
+- Full context with complete legislative provisions
 
 ### For Students & Researchers
-- Learn Dutch legal terminology across multiple domains
+- **Dictionary**: Learn Dutch legal terminology across multiple domains
+- **Legislation**: Study Dutch civil procedure with English translations
 - Compare legal concepts across jurisdictions
 - Academic research on comparative law
-- Access to open-licensed legal terminology
+- Access to open-licensed legal terminology and translations
 
 ## 🗂️ Data Structure
 
-The dictionary uses a structured JSON format with two main types:
+The project uses structured JSON formats for different content types:
 
-### Bilingual Translation Entries
+### Dictionary - Bilingual Translation Entries
 ```json
 {
   "source": "aanhangig",
@@ -88,7 +108,7 @@ The dictionary uses a structured JSON format with two main types:
 }
 ```
 
-### Monolingual Dictionary Entries
+### Dictionary - Monolingual Dictionary Entries
 ```json
 {
   "source": "baldadigheid",
@@ -101,8 +121,25 @@ The dictionary uses a structured JSON format with two main types:
 }
 ```
 
+### Legislation - Translation Segments
+```json
+{
+  "tuid": "0000002",
+  "source": "Wetboek van Burgerlijke Rechtsvordering",
+  "target": "Code of Civil Procedure",
+  "lang-source": "nl-nl",
+  "lang-target": "en-gb",
+  "author": "Burrough/Machon/Oranje/Frakes/Visser",
+  "license": "CC BY 4.0",
+  "sme-reviewed": true,
+  "premium": false,
+  "type": "legislation",
+  "document": "Wetboek van Burgerlijke Rechtsvordering - Book 1"
+}
+```
+
 ### Fields
-- **source**: Original term
+- **source**: Original term or text
 - **target**: Translation (for bilingual entries)
 - **lang-source**: Source language code (nl-nl, en-gb, etc.)
 - **lang-target**: Target language code (for bilingual entries)
@@ -112,6 +149,9 @@ The dictionary uses a structured JSON format with two main types:
 - **license**: Usage license (CC BY 4.0, CC0)
 - **sme-reviewed**: Subject Matter Expert review status (boolean)
 - **premium**: Premium content flag (boolean)
+- **tuid**: Translation unit ID (for legislation entries)
+- **type**: Content type ("legislation" for legislation entries)
+- **document**: Source document name (for legislation entries)
 
 ## 📜 License & Attribution
 
@@ -161,21 +201,28 @@ This is an open-access project. Contributions are welcome!
 
 ## 🎯 Roadmap
 
-### Current Version (v1.5)
+### Current Version (v2.1)
 - ✅ 650+ professional legal terms
+- ✅ 3,118 optimized legislation translation segments (Complete Code of Civil Procedure)
+  - ✅ Covers all Books (1, 2-3, 4) comprehensively
+  - ✅ Article numbers merged with text for readability
+  - ✅ Professional formatting matching wetten.overheid.nl
+- ✅ 64 new glossary terms extracted from legislation (ready for curation)
 - ✅ Multilingual support (NL, EN, FR, DE, ES)
 - ✅ Monolingual Dutch dictionary with comprehensive definitions
+- ✅ Bilingual legislation browser (wetten.overheid.nl-style)
+- ✅ Book filtering and navigation
 - ✅ Responsive web interface
 - ✅ Subject Matter Expert-reviewed content
 - ✅ Multiple licenses (CC BY 4.0, CC0)
 
 ### Future Plans
-- 📝 Expand monolingual dictionaries for other languages
-- 🔗 Link to relevant articles in legal codes
-- 🌐 Add more language pairs
-- 📚 Expand to other legal domains (criminal law, tax law, etc.)
+- 📝 Expand to other Dutch legislation (Criminal Code, Civil Code, etc.)
+- 🔗 Cross-reference links between dictionary and legislation
+- 🌐 Add more language pairs for legislation
+- 📑 Article number indexing and navigation
 - 🔊 Audio pronunciation guides
-- 💾 Export functionality (PDF, CSV)
+- 💾 Enhanced export functionality (PDF, CSV, XML)
 - 🔌 API access for developers
 - 🤖 Integration with translation tools
 
