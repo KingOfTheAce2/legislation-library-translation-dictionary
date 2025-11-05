@@ -1,0 +1,172 @@
+[
+ {
+  "source": "Ministerie van Algemene Zaken",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für allgemeine Angelegenheiten",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Buitenlandse Zaken",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für auswärtige Angelegenheiten",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Justitie en Veiligheid",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Justiz und Sicherheit",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Inneres und Königreichs­beziehungen",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Onderwijs, Cultuur en Wetenschap",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Bildung, Kultur und Wissenschaft",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Financiën",
+  "lang-source": "nl-nl",
+  "target": "Ministerium der Finanzen",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Defensie",
+  "lang-source": "nl-nl",
+  "target": "Ministerium der Verteidigung",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Infrastructuur en Waterstaat",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Infrastruktur und Wasserwirtschaft",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Economische Zaken",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Wirtschaft",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Landbouw, Visserij, Voedselzekerheid en Natuur",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Landwirtschaft, Fischerei, Ernährungssicherheit und Natur",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Sociale Zaken en Werkgelegenheid",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Soziales und Arbeit",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Volksgezondheid, Welzijn en Sport",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Gesundheit, Gemeinwohl und Sport",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Asiel en Migratie",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Asyl und Migration",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Klimaat en Groene Groei",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Klima und grünes Wachstum",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening",
+  "lang-source": "nl-nl",
+  "target": "Ministerium für Wohnungswesen und Raumordnung",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Minister-president",
+  "lang-source": "nl-nl",
+  "target": "Ministerpräsident",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ },
+ {
+  "source": "Minister voor Asiel en Migratie",
+  "lang-source": "nl-nl",
+  "target": "Ministerin für Asyl und Migration",
+  "lang-target": "de-de",
+  "author": "Rijksoverheid",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
+ }
+]
