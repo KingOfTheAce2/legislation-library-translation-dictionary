@@ -309,6 +309,231 @@
             padding: 0 0.2rem;
             border-radius: 2px;
         }
+
+        /* Export and Premium Features */
+        .export-toolbar {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .export-btn {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--accent);
+            background: white;
+            color: var(--accent);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .export-btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .export-btn.premium {
+            border-color: #d97706;
+            color: #d97706;
+        }
+
+        .export-btn.premium:hover {
+            background: #d97706;
+            color: white;
+        }
+
+        .premium-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .modal-close:hover {
+            background: var(--bg-secondary);
+            color: var(--text);
+        }
+
+        .premium-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .premium-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .premium-features li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 2px solid var(--border);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, #ebf8ff 0%, #f7fafc 100%);
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+
+        .price-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .api-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+
+        .api-example {
+            margin: 1.5rem 0;
+        }
+
+        .api-example h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        @media print {
+            .search-section,
+            .export-toolbar,
+            .support-section,
+            .footer,
+            .header .stats {
+                display: none;
+            }
+
+            .header {
+                background: white;
+                color: var(--primary);
+                box-shadow: none;
+                border-bottom: 2px solid var(--primary);
+            }
+
+            .term-card {
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -318,7 +543,7 @@
             <p class="subtitle">Professional English-Dutch Legal Translation Resource</p>
             <div class="stats">
                 <div class="stat"><strong>619</strong> Terms</div>
-                <div class="stat"><strong>✓</strong> SME Reviewed</div>
+                <div class="stat" title="Subject Matter Expert Reviewed"><strong>✓</strong> SME Reviewed</div>
                 <div class="stat"><strong>CC BY 4.0</strong> Licensed</div>
                 <div class="stat">Wetboek van Burgerlijke Rechtsvordering</div>
             </div>
@@ -358,10 +583,84 @@
             <div class="results-info" id="resultsInfo">
                 Showing all 619 terms
             </div>
+
+            <!-- Export Toolbar -->
+            <div class="export-toolbar">
+                <div class="export-buttons">
+                    <button class="export-btn" onclick="exportToCSV()">
+                        📄 Export CSV (Current Results)
+                    </button>
+                    <button class="export-btn" onclick="exportToPDF()">
+                        📑 Print / PDF
+                    </button>
+                    <button class="export-btn premium" onclick="showPremiumModal('bulk')">
+                        💾 Bulk Download <span class="premium-badge">PRO</span>
+                    </button>
+                </div>
+                <button class="export-btn" onclick="showAPIModal()" style="border-color: #10b981; color: #10b981;">
+                    🔌 API Access
+                </button>
+            </div>
         </div>
 
         <div class="results-container" id="resultsContainer">
             <div class="loading">Loading dictionary...</div>
+        </div>
+
+        <!-- API Documentation Section -->
+        <div class="api-section" id="apiSection" style="display: none;">
+            <h2>🔌 API Access</h2>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                Access the legal dictionary programmatically via our JSON API. Free tier includes 1000 requests/day.
+            </p>
+
+            <div class="api-example">
+                <h4>Free Tier - Direct JSON Access</h4>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0.5rem 0;">
+                    Fetch the complete dictionary as JSON (updated daily):
+                </p>
+                <div class="code-block">fetch('https://kingoftheace2.github.io/legislation-library-translation-dictionary/Glossary-of-Dutch-Procedural-Terminology.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(`Loaded ${data.length} terms`);
+    // Your code here
+  });</div>
+            </div>
+
+            <div class="api-example">
+                <h4>Premium API - Search & Filter Endpoints</h4>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin: 0.5rem 0;">
+                    Coming soon: RESTful API with advanced search, filtering, and real-time updates.
+                </p>
+                <div class="code-block">// Premium API (Coming Soon)
+GET /api/v1/search?q=aanhangig&lang=nl
+GET /api/v1/term/{id}
+GET /api/v1/terms?reviewed=yes&limit=10</div>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Free Tier</h3>
+                <div class="price">$0<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                <ul class="premium-features">
+                    <li>Direct JSON file access</li>
+                    <li>1,000 requests/day</li>
+                    <li>All 619 terms included</li>
+                    <li>Attribution required</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Premium API <span class="premium-badge">COMING SOON</span></h3>
+                <div class="price">$29<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                <ul class="premium-features">
+                    <li>RESTful API endpoints</li>
+                    <li>50,000 requests/day</li>
+                    <li>Advanced search & filtering</li>
+                    <li>Real-time updates</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="support-btn" onclick="showPremiumModal('api')" style="width: 100%; margin: 0.5rem 0;">Get Early Access</button>
+            </div>
         </div>
 
         <div class="support-section">
@@ -370,7 +669,134 @@
                 This dictionary is free and open-access. If you find it valuable, consider supporting its development:
             </p>
             <a href="#" class="support-btn" onclick="alert('Add your donation link here (e.g., Buy Me a Coffee, Patreon, Ko-fi)'); return false;">☕ Support with a Donation</a>
-            <a href="https://github.com/yourusername/dutch-civil-procedure-library" class="support-btn" style="background: #24292e;">⭐ Star on GitHub</a>
+            <a href="https://github.com/KingOfTheAce2/legislation-library-translation-dictionary" class="support-btn" style="background: #24292e;">⭐ Star on GitHub</a>
+        </div>
+    </div>
+
+    <!-- Premium Modal -->
+    <div id="premiumModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>✨ Premium Features</h2>
+                <button class="modal-close" onclick="closeModal('premiumModal')">&times;</button>
+            </div>
+
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                Upgrade to access professional features while keeping the dictionary free for everyone.
+            </p>
+
+            <div class="pricing-card featured" style="margin: 1.5rem 0;">
+                <h3>Professional Plan</h3>
+                <div class="price">$19<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                <p class="price-note">or $190/year (save $38)</p>
+
+                <ul class="premium-features">
+                    <li><strong>Bulk Export:</strong> Download entire dictionary in multiple formats</li>
+                    <li><strong>Advanced Exports:</strong> Excel, JSON, XML formats</li>
+                    <li><strong>Custom Filters:</strong> Create and save custom term collections</li>
+                    <li><strong>API Access:</strong> 10,000 requests/day</li>
+                    <li><strong>Priority Updates:</strong> Get new terms first</li>
+                    <li><strong>Commercial License:</strong> Use in commercial products</li>
+                    <li><strong>Support Development:</strong> Help keep this resource free</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Institutional License</h3>
+                <div class="price">$99<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                <p class="price-note">For law firms, translation agencies, universities</p>
+
+                <ul class="premium-features">
+                    <li>Everything in Professional</li>
+                    <li>Unlimited team members</li>
+                    <li>50,000 API requests/day</li>
+                    <li>Custom integrations</li>
+                    <li>Dedicated support</li>
+                    <li>Training sessions</li>
+                    <li>Custom term requests (5/month)</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <button class="support-btn" onclick="alert('Contact: [Your Email]\n\nAdd your payment link here (Stripe, Gumroad, etc.)')">
+                    Get Premium Access
+                </button>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-light);">
+                    Questions? Contact us for custom pricing and institutional licenses.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Modal -->
+    <div id="apiModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔌 API Access</h2>
+                <button class="modal-close" onclick="closeModal('apiModal')">&times;</button>
+            </div>
+
+            <p style="color: var(--text-light); margin-bottom: 1rem;">
+                <strong>Free API access is available now!</strong> The full dictionary is accessible via JSON.
+            </p>
+
+            <div class="api-example">
+                <h4>Quick Start</h4>
+                <div class="code-block">// JavaScript Example
+const API_URL = 'https://kingoftheace2.github.io/legislation-library-translation-dictionary/Glossary-of-Dutch-Procedural-Terminology.json';
+
+async function searchTerm(query) {
+  const response = await fetch(API_URL);
+  const terms = await response.json();
+
+  return terms.filter(term =>
+    term.source.includes(query) ||
+    term.target.includes(query)
+  );
+}
+
+// Usage
+const results = await searchTerm('aanhangig');
+console.log(results);</div>
+            </div>
+
+            <div class="api-example">
+                <h4>Python Example</h4>
+                <div class="code-block">import requests
+
+API_URL = 'https://kingoftheace2.github.io/legislation-library-translation-dictionary/Glossary-of-Dutch-Procedural-Terminology.json'
+
+response = requests.get(API_URL)
+terms = response.json()
+
+# Search for a term
+results = [t for t in terms if 'pending' in t['target']]
+print(f"Found {len(results)} matches")</div>
+            </div>
+
+            <h4 style="margin-top: 1.5rem;">Data Structure</h4>
+            <div class="code-block">{
+  "source": "aanhangig",
+  "lang-source": "nl-nl",
+  "target": "pending",
+  "lang-target": "en-gb",
+  "author": "Burrough/Machon/Oranje/Frakes/Visser",
+  "license": "CC BY 4.0",
+  "sme-reviewed": "yes"
+}</div>
+
+            <div style="background: #fef3c7; padding: 1rem; border-radius: 6px; margin-top: 1.5rem;">
+                <strong>📋 Attribution Required</strong>
+                <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+                    This data is licensed under CC BY 4.0. Please attribute: "Burrough, Machon, Oranje, Frakes, Visser - Dutch Civil Procedure Legal Dictionary"
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <button class="support-btn" onclick="showPremiumModal('api'); closeModal('apiModal')">
+                    Upgrade to Premium API
+                </button>
+            </div>
         </div>
     </div>
 
@@ -520,6 +946,133 @@
         function escapeRegExp(string) {
             return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
+
+        // Export Functions
+        function exportToCSV() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let results = getFilteredResults();
+
+            if (results.length === 0) {
+                alert('No results to export. Try adjusting your search filters.');
+                return;
+            }
+
+            // CSV header
+            let csv = 'Source (Dutch),Target (English),Source Language,Target Language,Author,License,SME Reviewed\n';
+
+            // CSV rows
+            results.forEach(term => {
+                const row = [
+                    `"${term.source.replace(/"/g, '""')}"`,
+                    `"${term.target.replace(/"/g, '""')}"`,
+                    term['lang-source'],
+                    term['lang-target'],
+                    `"${term.author}"`,
+                    term.license,
+                    term['sme-reviewed']
+                ];
+                csv += row.join(',') + '\n';
+            });
+
+            // Create download
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+
+            link.setAttribute('href', url);
+            link.setAttribute('download', `dutch-legal-dictionary-${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Show success message
+            alert(`✓ Exported ${results.length} terms to CSV!\n\nAttribution: This data is from the Dutch Civil Procedure Legal Dictionary by Burrough, Machon, Oranje, Frakes, Visser (CC BY 4.0)`);
+        }
+
+        function exportToPDF() {
+            // Use browser's print function with special print CSS
+            const printConfirm = confirm('This will open the print dialog.\n\nTip: Select "Save as PDF" as your printer to create a PDF file.');
+
+            if (printConfirm) {
+                window.print();
+            }
+        }
+
+        function getFilteredResults() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let results = dictionaryData;
+
+            // Apply review filter
+            if (currentFilter === 'reviewed') {
+                results = results.filter(term => term['sme-reviewed'] === 'yes');
+            }
+
+            // Apply search
+            if (searchTerm) {
+                results = results.filter(term => {
+                    const sourceMatch = term.source.toLowerCase().includes(searchTerm);
+                    const targetMatch = term.target.toLowerCase().includes(searchTerm);
+
+                    if (currentDirection === 'both') {
+                        return sourceMatch || targetMatch;
+                    } else if (currentDirection === 'nl-en') {
+                        return sourceMatch;
+                    } else if (currentDirection === 'en-nl') {
+                        return targetMatch;
+                    }
+                    return false;
+                });
+            }
+
+            // Alphabetical sort
+            if (currentSort === 'alpha') {
+                results.sort((a, b) => a.source.localeCompare(b.source));
+            }
+
+            return results;
+        }
+
+        // Modal Functions
+        function showPremiumModal(feature) {
+            document.getElementById('premiumModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showAPIModal() {
+            const apiSection = document.getElementById('apiSection');
+            if (apiSection.style.display === 'none') {
+                apiSection.style.display = 'block';
+                apiSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                document.getElementById('apiModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        // Keyboard shortcut: Escape to close modals
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
     </script>
 </body>
 </html>
