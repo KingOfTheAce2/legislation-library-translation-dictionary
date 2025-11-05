@@ -1,21 +1,21 @@
-# 🇳🇱 Dutch Civil Procedure Legal Dictionary 🇬🇧
+# ⚖️ Multilingual Legal Dictionary & Translation Library
 
-A professional English-Dutch legal translation resource focused on civil procedure terminology (Wetboek van Burgerlijke Rechtsvordering).
+A professional multilingual legal translation resource covering Dutch legal terminology across multiple legal domains and languages.
 
-**[📖 View the Dictionary](https://yourusername.github.io/legislation-library-translation-dictionary/)** _(Update this URL after deployment)_
+**[📖 View the Dictionary](https://kingoftheace2.github.io/legislation-library-translation-dictionary/)**
 
 ## 📊 Overview
 
-- **619 professional legal terms**
-- **SME reviewed** by legal experts
-- **Bilingual search** (NL ↔ EN)
-- **CC BY 4.0 Licensed** - free and open access
-- **Authors:** Burrough / Machon / Oranje / Frakes / Visser
+- **650+ professional legal terms** across multiple domains
+- **Subject Matter Expert reviewed** by legal professionals
+- **Multilingual support** (NL ↔ EN, FR, DE, ES, and monolingual NL)
+- **Open licenses** (CC BY 4.0, CC0) - free and open access
+- **Multiple sources:** Raad van de Rechtspraak, legal experts, and professional translators
 
 ## ✨ Features
 
 ### 🔍 Smart Search
-- **Bidirectional search**: Search in Dutch or English
+- **Multilingual search**: Search in Dutch, English, French, German, or Spanish
 - **Real-time filtering**: Instant results as you type
 - **Relevance sorting**: Most relevant matches first
 - **Alphabetical sorting**: Browse terms A-Z
@@ -27,20 +27,21 @@ A professional English-Dutch legal translation resource focused on civil procedu
 - **Offline capable**: Works without internet after first load
 
 ### 🎯 Professional Quality
-- All terms reviewed by subject matter experts (SMEs)
+- All terms reviewed by Subject Matter Experts
 - Proper linguistic attribution
 - Clear source and target language markers
-- Contextual translations (e.g., "aanbrengen (een geschil bij de rechter)")
+- Contextual translations and comprehensive definitions
+- Monolingual dictionary for in-depth term explanations
 
 ## 🚀 Quick Start
 
 ### View Online
-Visit the live dictionary at: `https://yourusername.github.io/legislation-library-translation-dictionary/`
+Visit the live dictionary at: `https://kingoftheace2.github.io/legislation-library-translation-dictionary/`
 
 ### Use Locally
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/legislation-library-translation-dictionary.git
+git clone https://github.com/kingoftheace2/legislation-library-translation-dictionary.git
 
 # Open in browser
 open index.html
@@ -51,44 +52,66 @@ No build process required - it's pure HTML/CSS/JS!
 ## 📖 Usage Examples
 
 ### For Legal Professionals
-- Translate Dutch court documents to English
-- Understand Dutch procedural terms in international litigation
+- Translate Dutch legal documents across multiple languages
+- Understand Dutch legal terms with comprehensive definitions
 - Standardize translations across your practice
+- Access subject matter expert-reviewed terminology
 
 ### For Translators
-- Reference guide for legal translation work
-- Quality assurance for civil procedure translations
+- Reference guide for legal translation work across NL, EN, FR, DE, ES
+- Quality assurance for legal translations
 - Terminology consistency checking
+- Monolingual definitions for deeper understanding
 
 ### For Students & Researchers
-- Learn Dutch civil procedure terminology
+- Learn Dutch legal terminology across multiple domains
 - Compare legal concepts across jurisdictions
 - Academic research on comparative law
+- Access to open-licensed legal terminology
 
 ## 🗂️ Data Structure
 
-The dictionary uses a structured JSON format:
+The dictionary uses a structured JSON format with two main types:
 
+### Bilingual Translation Entries
 ```json
 {
   "source": "aanhangig",
   "lang-source": "nl-nl",
   "target": "pending",
   "lang-target": "en-gb",
+  "lang-target-dict": "A case is pending when it has been filed with the court",
   "author": "Burrough/Machon/Oranje/Frakes/Visser",
   "license": "CC BY 4.0",
-  "sme-reviewed": "yes"
+  "sme-reviewed": true,
+  "premium": false
+}
+```
+
+### Monolingual Dictionary Entries
+```json
+{
+  "source": "baldadigheid",
+  "lang-source": "nl-nl",
+  "lang-source-dict": "Strafbare overtreding wanneer er gevaar of nadeel voor goederen of personen in de openbare ruimte wordt veroorzaakt...",
+  "author": "Raad van de Rechtspraak",
+  "license": "CC0",
+  "sme-reviewed": true,
+  "premium": false
 }
 ```
 
 ### Fields
-- **source**: Original Dutch term
-- **target**: English translation
-- **lang-source**: Source language code (nl-nl)
-- **lang-target**: Target language code (en-gb)
-- **author**: Translation authors/team
-- **license**: Usage license (CC BY 4.0)
-- **sme-reviewed**: Expert review status
+- **source**: Original term
+- **target**: Translation (for bilingual entries)
+- **lang-source**: Source language code (nl-nl, en-gb, etc.)
+- **lang-target**: Target language code (for bilingual entries)
+- **lang-source-dict**: Definition in source language (for monolingual entries)
+- **lang-target-dict**: Definition in target language (optional)
+- **author**: Author(s)/source organization
+- **license**: Usage license (CC BY 4.0, CC0)
+- **sme-reviewed**: Subject Matter Expert review status (boolean)
+- **premium**: Premium content flag (boolean)
 
 ## 📜 License & Attribution
 
@@ -103,15 +126,19 @@ You are free to:
 Under these terms:
 - **Attribution**: Give appropriate credit to the authors
 
-### Authors
-Created by: Burrough / Machon / Oranje / Frakes / Visser
+### Authors & Sources
+- **Civil Procedure Terms**: Burrough / Machon / Oranje / Frakes / Visser
+- **Monolingual Dutch Dictionary**: Raad van de Rechtspraak (Dutch Judiciary)
+- **Business Terms**: business.gov.nl
+- **Additional translations**: Various Subject Matter Experts
 
 ### Citation
 ```
-Burrough, Machon, Oranje, Frakes, & Visser. (2024).
-Dutch Civil Procedure Legal Dictionary.
+Legislation Library Translation Dictionary. (2025).
+Multilingual Legal Dictionary & Translation Library.
 Legislation Library Translation Project.
-Licensed under CC BY 4.0.
+Licensed under CC BY 4.0 and CC0.
+Available at: https://github.com/kingoftheace2/legislation-library-translation-dictionary
 ```
 
 ## 💡 Contributing
@@ -125,27 +152,32 @@ This is an open-access project. Contributions are welcome!
 4. **Enhance the website**: Code improvements welcome
 
 ### Contribution Guidelines
-- Maintain SME review standards
+- Maintain Subject Matter Expert review standards
 - Provide context for specialized terms
 - Follow the existing JSON structure
 - Include source attribution
+- Specify appropriate license (CC BY 4.0 or CC0)
+- Mark Subject Matter Expert review status accurately
 
 ## 🎯 Roadmap
 
-### Current Version (v1.0)
-- ✅ 619 civil procedure terms
-- ✅ Bidirectional search
+### Current Version (v1.5)
+- ✅ 650+ professional legal terms
+- ✅ Multilingual support (NL, EN, FR, DE, ES)
+- ✅ Monolingual Dutch dictionary with comprehensive definitions
 - ✅ Responsive web interface
-- ✅ SME-reviewed content
+- ✅ Subject Matter Expert-reviewed content
+- ✅ Multiple licenses (CC BY 4.0, CC0)
 
 ### Future Plans
-- 📝 Add definitions and usage examples
-- 🔗 Link to relevant articles in the Code
-- 🌐 Add more language pairs (FR, DE, ES)
-- 📚 Expand to other legal codes
+- 📝 Expand monolingual dictionaries for other languages
+- 🔗 Link to relevant articles in legal codes
+- 🌐 Add more language pairs
+- 📚 Expand to other legal domains (criminal law, tax law, etc.)
 - 🔊 Audio pronunciation guides
 - 💾 Export functionality (PDF, CSV)
 - 🔌 API access for developers
+- 🤖 Integration with translation tools
 
 ## 💰 Support This Project
 
@@ -187,9 +219,9 @@ While maintaining open access, consider:
 
 ## 📞 Contact & Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/legislation-library-translation-dictionary/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/legislation-library-translation-dictionary/discussions)
-- **Email**: your.email@example.com _(add your contact)_
+- **Issues**: [GitHub Issues](https://github.com/kingoftheace2/legislation-library-translation-dictionary/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/kingoftheace2/legislation-library-translation-dictionary/discussions)
+- **Repository**: [GitHub Repo](https://github.com/kingoftheace2/legislation-library-translation-dictionary)
 
 ## 🏛️ Related Projects
 
@@ -202,10 +234,12 @@ Part of the **Legislation Library Translation Project** - making legal texts acc
 
 ## 🙏 Acknowledgments
 
-- **Authors**: Burrough, Machon, Oranje, Frakes, Visser
-- **SME Reviewers**: Legal experts who validated the translations
+- **Civil Procedure Authors**: Burrough, Machon, Oranje, Frakes, Visser
+- **Raad van de Rechtspraak**: For providing comprehensive legal terminology
+- **Subject Matter Expert Reviewers**: Legal professionals who validated the content
+- **business.gov.nl**: For business law terminology
 - **Community**: All contributors and users providing feedback
 
 ---
 
-**Made with ⚖️ for the legal community** | [Report an Issue](https://github.com/yourusername/legislation-library-translation-dictionary/issues) | [Contribute](CONTRIBUTING.md)
+**Made with ⚖️ for the legal community** | [Report an Issue](https://github.com/kingoftheace2/legislation-library-translation-dictionary/issues) | [View Repository](https://github.com/kingoftheace2/legislation-library-translation-dictionary)

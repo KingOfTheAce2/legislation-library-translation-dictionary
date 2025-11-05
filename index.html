@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dutch-English Civil Procedure Legal Dictionary - 619 professional legal terms">
-    <meta name="keywords" content="Dutch law, civil procedure, legal translation, Nederlands recht, English-Dutch legal dictionary">
-    <title>Dutch Civil Procedure Legal Dictionary | EN-NL</title>
+    <meta name="description" content="Multilingual Legal Dictionary - 650+ professional legal terms across NL, EN, FR, DE, ES with Subject Matter Expert review">
+    <meta name="keywords" content="Dutch law, legal translation, Nederlands recht, multilingual legal dictionary, legal terminology, NL-EN-FR-DE-ES">
+    <title>Multilingual Legal Dictionary | NL-EN-FR-DE-ES</title>
     <style>
         * {
             margin: 0;
@@ -539,13 +539,13 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <h1>🇳🇱 Dutch Civil Procedure Legal Dictionary 🇬🇧</h1>
-            <p class="subtitle">Professional English-Dutch Legal Translation Resource</p>
+            <h1>⚖️ Multilingual Legal Dictionary</h1>
+            <p class="subtitle">Professional Legal Translation Resource | NL • EN • FR • DE • ES</p>
             <div class="stats">
-                <div class="stat"><strong>619</strong> Terms</div>
-                <div class="stat" title="Subject Matter Expert Reviewed"><strong>✓</strong> SME Reviewed</div>
-                <div class="stat"><strong>CC BY 4.0</strong> Licensed</div>
-                <div class="stat">Wetboek van Burgerlijke Rechtsvordering</div>
+                <div class="stat"><strong>650+</strong> Terms</div>
+                <div class="stat" title="Subject Matter Expert Reviewed"><strong>✓</strong> Subject Matter Expert Reviewed</div>
+                <div class="stat"><strong>CC BY 4.0 / CC0</strong> Licensed</div>
+                <div class="stat">Multiple Legal Domains</div>
             </div>
         </div>
     </header>
@@ -572,7 +572,7 @@
                 <span class="filter-label">Show:</span>
                 <select id="reviewFilter">
                     <option value="all">All Terms</option>
-                    <option value="reviewed">SME Reviewed Only</option>
+                    <option value="reviewed">Subject Matter Expert Reviewed Only</option>
                 </select>
                 <select id="sortOrder">
                     <option value="alpha">Alphabetical</option>
@@ -788,7 +788,7 @@ print(f"Found {len(results)} matches")</div>
             <div style="background: #fef3c7; padding: 1rem; border-radius: 6px; margin-top: 1.5rem;">
                 <strong>📋 Attribution Required</strong>
                 <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0;">
-                    This data is licensed under CC BY 4.0. Please attribute: "Burrough, Machon, Oranje, Frakes, Visser - Dutch Civil Procedure Legal Dictionary"
+                    This data is licensed under CC BY 4.0 and CC0 (depending on source). Please attribute: "Legislation Library Translation Dictionary - Multilingual Legal Dictionary" - Available at: https://github.com/kingoftheace2/legislation-library-translation-dictionary
                 </p>
             </div>
 
@@ -927,7 +927,7 @@ print(f"Found {len(results)} matches")</div>
                         <div class="term-target">→ ${target}</div>
                         <div class="term-meta">
                             <span class="meta-badge">${term['lang-source']} → ${term['lang-target']}</span>
-                            ${term['sme-reviewed'] === 'yes' ? '<span class="meta-badge verified-badge">✓ SME Reviewed</span>' : ''}
+                            ${term['sme-reviewed'] === true || term['sme-reviewed'] === 'yes' ? '<span class="meta-badge verified-badge">✓ Subject Matter Expert Reviewed</span>' : ''}
                         </div>
                     </div>
                 `;
@@ -958,7 +958,7 @@ print(f"Found {len(results)} matches")</div>
             }
 
             // CSV header
-            let csv = 'Source (Dutch),Target (English),Source Language,Target Language,Author,License,SME Reviewed\n';
+            let csv = 'Source,Target,Source Language,Target Language,Author,License,Subject Matter Expert Reviewed\n';
 
             // CSV rows
             results.forEach(term => {
@@ -988,7 +988,7 @@ print(f"Found {len(results)} matches")</div>
             document.body.removeChild(link);
 
             // Show success message
-            alert(`✓ Exported ${results.length} terms to CSV!\n\nAttribution: This data is from the Dutch Civil Procedure Legal Dictionary by Burrough, Machon, Oranje, Frakes, Visser (CC BY 4.0)`);
+            alert(`✓ Exported ${results.length} terms to CSV!\n\nAttribution: This data is from the Multilingual Legal Dictionary - Legislation Library Translation Dictionary (CC BY 4.0 / CC0)\nAvailable at: https://github.com/kingoftheace2/legislation-library-translation-dictionary`);
         }
 
         function exportToPDF() {

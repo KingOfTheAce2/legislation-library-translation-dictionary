@@ -1,0 +1,254 @@
+[
+  {
+    "source": "baldadigheid",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Strafbare overtreding wanneer er gevaar of nadeel voor goederen of personen in de openbare ruimte wordt veroorzaakt. Het gaat meestal om ruw, onbezonnen of kwaadwillig gedrag, bijvoorbeeld (expres) vernielen van openbare of particuliere eigendommen of veroorzaken van overlast. Baldadigheid kan ook gaan om overtreden van een toegangsverbod.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "aanhangig",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een zaak is aanhangig wanneer deze bij de rechter is ingediend en in behandeling is. De zaak loopt dan bij de rechter en wacht op een uitspraak.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "aanklacht",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een formele beschuldiging van een strafbaar feit, ingediend bij het Openbaar Ministerie. De aanklacht wordt gedaan door het Openbaar Ministerie tegen een verdachte.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "aansprakelijkheid",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De verplichting om schade te vergoeden die is veroorzaakt door een bepaalde gedraging of tekortkoming. Aansprakelijkheid kan voortvloeien uit een onrechtmatige daad, een tekortkoming in een overeenkomst, of andere wettelijke gronden.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "beroep",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een rechtsmiddel waarmee een partij die het niet eens is met een uitspraak van een lagere rechter, verzoekt om een hogere rechter de zaak opnieuw te beoordelen. Het beroep moet binnen een bepaalde termijn worden ingesteld.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "cassatie",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Het hoogste rechtsmiddel in Nederland, waarbij de Hoge Raad wordt gevraagd te beoordelen of de wet juist is toegepast door de lagere rechter. In cassatie worden geen nieuwe feiten onderzocht, alleen de rechtstoepassing.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "dagvaarding",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een officieel document waarmee iemand wordt opgeroepen om voor de rechter te verschijnen. In de dagvaarding staat vermeld wie de eiser is, wie de gedaagde is, wat er wordt gevorderd en op welke gronden.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "eiser",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De partij die een civiele procedure begint door een zaak aanhangig te maken bij de rechter. De eiser vordert iets van de gedaagde (bijvoorbeeld betaling, nakoming van een contract, of schadevergoeding).",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "gedaagde",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De partij tegen wie een civiele procedure is aangespannen. De gedaagde wordt door de eiser voor de rechter gedagvaard en moet zich verweren tegen de vordering.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "hoger beroep",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Het proces waarbij een partij die het niet eens is met een uitspraak van een rechtbank in eerste aanleg, de zaak voorlegt aan een gerechtshof. Het gerechtshof beoordeelt de zaak opnieuw, zowel op feiten als op recht.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "incidenteel hoger beroep",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een hoger beroep dat wordt ingesteld door de geïntimeerde (de partij die niet als eerste in hoger beroep is gegaan) als reactie op het principale hoger beroep van de appellant.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "kantonrechter",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een rechter bij de rechtbank die oordeelt over relatief eenvoudige civiele zaken (zoals huurgeschillen, arbeidsgeschillen en vorderingen tot €25.000) en strafzaken waarbij de maximale straf een jaar gevangenisstraf is.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "ontslag op staande voet",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Het direct beëindigen van een arbeidsovereenkomst door de werkgever zonder opzegtermijn, wegens een dringende reden die te wijten is aan de werknemer. Dit is alleen toegestaan bij ernstig wangedrag.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "onrechtmatige daad",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een gedraging die in strijd is met een wettelijke plicht of ongeschreven recht, of die indruist tegen wat in het maatschappelijk verkeer betaamt. Bij een onrechtmatige daad kan de benadeelde schadevergoeding vorderen.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "openbaar ministerie",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Het orgaan dat in strafzaken optreedt namens de samenleving. Het Openbaar Ministerie (OM) vervolgt verdachten van strafbare feiten en eist straffen. Het OM wordt vertegenwoordigd door officieren van justitie.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "proceskosten",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De kosten die gemaakt worden in verband met een rechtszaak, zoals griffierechten en advocaatkosten. De verliezende partij moet vaak (een deel van) de proceskosten van de winnende partij vergoeden.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "proforma zitting",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een korte zitting waarbij alleen wordt vastgesteld wat de stand van zaken is in een procedure. Er wordt nog geen inhoudelijke behandeling gegeven. Vaak wordt een nieuwe datum afgesproken voor de echte behandeling.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "rechtbank",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De rechter in eerste aanleg die oordeelt over civiele zaken, strafzaken, bestuursrecht en familierechtelijke zaken. Nederland heeft elf rechtbanken, verdeeld over het hele land.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "schorsing",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Het tijdelijk opschorten of uitstellen van een rechtsgevolg of procedure. Bijvoorbeeld: schorsing van de uitvoering van een besluit totdat de rechter een definitieve uitspraak heeft gedaan.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "tenlastelegging",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De formele beschrijving van het strafbare feit waarvan iemand wordt verdacht. De tenlastelegging wordt opgesteld door het Openbaar Ministerie en vormt de basis van de strafzaak.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "uitspraak",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De beslissing van de rechter in een zaak. De uitspraak wordt schriftelijk vastgelegd en bevat de motivering van de rechter en het oordeel over de zaak.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "verdachte",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een persoon die door het Openbaar Ministerie wordt beschuldigd van een strafbaar feit. De verdachte heeft het recht op rechtsbijstand en hoeft niet mee te werken aan het bewijs tegen zichzelf.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "verstekvonnis",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een vonnis dat wordt gewezen als de gedaagde niet verschijnt bij de zitting en zich niet heeft laten vertegenwoordigen. Tegen een verstekvonnis kan vaak verzet worden ingesteld.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "verzet",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een rechtsmiddel tegen een verstekvonnis. Door verzet in te stellen kan de gedaagde alsnog in de gelegenheid worden gesteld om verweer te voeren tegen de vordering van de eiser.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "voorlopige voorziening",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een tijdelijke maatregel die de voorzieningenrechter kan treffen in afwachting van de bodemprocedure. De voorlopige voorziening is bedoeld voor spoedeisende zaken waarbij snel een beslissing nodig is.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "vonnis",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De schriftelijke uitspraak van de rechter in een civiele zaak. Het vonnis bevat de beslissing van de rechter en de gronden waarop deze beslissing is gebaseerd.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "wraking",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "Een procedure waarbij een partij verzoekt om een rechter te vervangen omdat er twijfel bestaat over de onpartijdigheid van die rechter. Het wrakingsverzoek wordt beoordeeld door andere rechters.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  },
+  {
+    "source": "zittingsdatum",
+    "lang-source": "nl-nl",
+    "lang-source-dict": "De datum waarop een zaak wordt behandeld door de rechter. Op de zittingsdatum kunnen partijen hun standpunten toelichten en kunnen getuigen worden gehoord.",
+    "author": "Raad van de Rechtspraak",
+    "license": "CC0",
+    "sme-reviewed": true,
+    "premium": false
+  }
+]
