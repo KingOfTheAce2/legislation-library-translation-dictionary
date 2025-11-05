@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Dutch-English Legal Translation Dictionary - Multi-source translations with examples">
-    <meta name="keywords" content="Dutch law, legal translation, Nederlands recht, legal dictionary, civil procedure">
-    <title>Dutch-English Legal Translation Dictionary</title>
+    <meta name="description" content="Professional Multilingual Legal Translation Dictionary - Multi-source translations with examples | NL-EN-FR-DE-ES">
+    <meta name="keywords" content="Dutch law, legal translation, Nederlands recht, legal dictionary, multilingual legal terminology, civil procedure">
+    <title>Multilingual Legal Translation Dictionary</title>
     <style>
         * {
             margin: 0;
@@ -524,7 +524,7 @@
                 </select>
                 <select id="reviewFilter" class="filter-select" onchange="performSearch()">
                     <option value="all">All Terms</option>
-                    <option value="reviewed">SME Reviewed Only</option>
+                    <option value="reviewed">Subject Matter Expert Reviewed Only</option>
                 </select>
                 <select id="licenseFilter" class="filter-select" onchange="performSearch()">
                     <option value="all">All Licenses</option>
@@ -740,7 +740,7 @@
                             <strong>Type:</strong> ${translation['source-type']}
                         </div>
                         <span class="badge ${licenseBadgeClass}">${translation.license}</span>
-                        ${translation['sme-reviewed'] ? '<span class="badge badge-success">✓ SME Reviewed</span>' : ''}
+                        ${translation['sme-reviewed'] ? '<span class="badge badge-success">✓ Subject Matter Expert Reviewed</span>' : ''}
                         ${translation.context ? `<span class="badge badge-info">${translation.context}</span>` : ''}
                     </div>
                 </div>
