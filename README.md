@@ -1,18 +1,26 @@
-# ⚖️ Multilingual Legal Dictionary & Legislation Library
+# ⚖️ Netherlands Legal Dictionary & Legislation Library
 
-A professional multilingual legal translation resource covering Dutch legal terminology and complete legislation translations.
+**The Legislation Library is the main project.** The legal dictionary originated as a spin-off and has now been integrated back into this comprehensive resource.
+
+A professional legal resource for **lawyers**, **tax professionals**, and **legal translators** covering Netherlands legal terminology and complete legislation translations.
 
 **[📖 View the Dictionary](https://kingoftheace2.github.io/legislation-library-translation-dictionary/)**
 **[📜 View Legislation Library](https://kingoftheace2.github.io/legislation-library-translation-dictionary/legislation.html)**
+**[📜 Authors & Licenses](https://kingoftheace2.github.io/legislation-library-translation-dictionary/authors-licenses.html)**
+
+## 🌍 Important: Netherlands Legal Context
+
+**⚠️ This is a Netherlands Dutch (nl-NL) legal dictionary and legislation library.** All terms, definitions, and legislation are specific to **Dutch law as applied in the Netherlands**, even when displayed in other languages (English, French, German, Spanish). This resource is NOT applicable to Dutch law in Belgium, Suriname, or other Dutch-speaking jurisdictions.
 
 ## 📊 Overview
 
-- **650+ professional legal terms** across multiple domains
-- **3,118 legislation translation segments** - Dutch Code of Civil Procedure (Complete, optimized)
-- **Subject Matter Expert reviewed** by legal professionals
-- **Multilingual support** (NL ↔ EN, FR, DE, ES, and monolingual NL)
-- **Open licenses** (CC BY 4.0, CC0) - free and open access
-- **Multiple sources:** Raad van de Rechtspraak, legal experts, and professional translators
+- **3,400+ professional legal terms** including both translations and monolingual dictionaries
+- **3,118 legislation translation segments** - Complete Dutch Code of Civil Procedure (optimized for readability)
+- **Subject Matter Expert reviewed** by legal professionals and judicial authorities
+- **Multilingual support** (NL ↔ EN, FR, DE, ES)
+- **Monolingual dictionaries** (NL-NL Dutch legal definitions, FR-FR French legal definitions)
+- **Open licenses** (CC BY 4.0, CC0, Licence Ouverte 2.0) - free and open access
+- **Multiple authoritative sources:** Raad van de Rechtspraak (Dutch Judiciary), Dutch Ministry of Finance, business.gov.nl, legal translation experts, and more
 
 ## ✨ Features
 
@@ -20,10 +28,14 @@ A professional multilingual legal translation resource covering Dutch legal term
 
 #### 🔍 Legal Dictionary
 - **Multilingual search**: Search in Dutch, English, French, German, or Spanish
-- **650+ professional legal terms** with Subject Matter Expert review
+- **3,400+ professional legal terms** with Subject Matter Expert review
 - **Real-time filtering**: Instant results as you type
-- **Contextual translations** and comprehensive definitions
-- **Monolingual dictionary** for in-depth term explanations
+- **Translation dictionaries** (bilingual NL ↔ EN/FR/DE/ES)
+- **Monolingual dictionaries** for in-depth explanations:
+  - **Dutch Legal Dictionary (NL-NL)**: 1,500+ terms with definitions in Dutch
+  - **French Legal Dictionary (FR-FR)**: 495 terms with definitions in French
+- **Multiple authoritative sources** with proper attribution
+- **Comprehensive definitions** and contextual usage
 
 #### 📜 Legislation Library
 - **Complete legislation translations**: Dutch Code of Civil Procedure - All Books (NL-EN)
@@ -68,19 +80,22 @@ No build process required - it's pure HTML/CSS/JS!
 
 ## 📖 Usage Examples
 
-### For Legal Professionals
-- **Dictionary**: Translate Dutch legal documents across multiple languages
-- **Legislation**: Reference bilingual Code of Civil Procedure provisions
-- Understand Dutch legal terms with comprehensive definitions
-- Standardize translations across your practice
-- Access subject matter expert-reviewed terminology
+### For Lawyers & Tax Professionals (Primary Use Case)
+- **Primary Resource**: Professional legal dictionary and legislation for Netherlands law practice
+- **Dictionary**: Quick reference for Dutch legal terms with expert-reviewed translations
+- **Legislation**: Complete bilingual Code of Civil Procedure for case research and citations
+- **Monolingual Dictionary**: In-depth Dutch legal definitions (NL-NL) for precise understanding
+- Standardize terminology across your practice and documents
+- Access authoritative sources (Dutch Judiciary, Ministry of Finance)
+- Cross-reference between dictionary and legislation
 
-### For Translators
-- **Dictionary**: Reference guide for legal translation work across NL, EN, FR, DE, ES
-- **Legislation**: See how legal professionals translate procedural law
-- Quality assurance for legal translations
-- Terminology consistency checking
+### For Legal Translators (Secondary Use Case)
+- **Secondary Resource**: Professional reference guide for legal translation work
+- **Dictionary**: Expert-reviewed translations across NL, EN, FR, DE, ES
+- **Legislation**: See how legal professionals translate complex procedural law
+- Quality assurance and terminology consistency checking
 - Full context with complete legislative provisions
+- Multiple sources for comparison and validation
 
 ### For Students & Researchers
 - **Dictionary**: Learn Dutch legal terminology across multiple domains
@@ -167,10 +182,21 @@ Under these terms:
 - **Attribution**: Give appropriate credit to the authors
 
 ### Authors & Sources
-- **Civil Procedure Terms**: Burrough / Machon / Oranje / Frakes / Visser
-- **Monolingual Dutch Dictionary**: Raad van de Rechtspraak (Dutch Judiciary)
-- **Business Terms**: business.gov.nl
-- **Additional translations**: Various Subject Matter Experts
+
+**For complete details, see:** [Authors & Licenses Page](https://kingoftheace2.github.io/legislation-library-translation-dictionary/authors-licenses.html)
+
+**Translation Dictionaries (Bilingual):**
+- **Civil Procedure Glossary (NL↔EN)**: Burrough / Machon / Oranje / Frakes / Visser - CC BY 4.0
+- **Ministry of Finance Legal Glossary**: Dutch Ministry of Finance - CC0
+- **Business Law Dictionary**: business.gov.nl - CC0
+- **Multilingual Glossaries (FR/DE/ES)**: Various Subject Matter Experts - CC BY 4.0 / CC0
+
+**Monolingual Dictionaries:**
+- **Dutch Legal Dictionary (NL-NL)**: Raad van de Rechtspraak (Dutch Judiciary) - CC0
+- **French Legal Dictionary (FR-FR)**: Ministère de la Justice (France) - Licence Ouverte 2.0
+
+**Legislation Translations:**
+- **Code of Civil Procedure**: Burrough / Machon / Oranje / Frakes / Visser - CC BY 4.0
 
 ### Citation
 ```

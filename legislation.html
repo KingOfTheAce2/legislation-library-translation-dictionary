@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dutch Code of Civil Procedure (Wetboek van Burgerlijke Rechtsvordering) Book 1 - NL-EN Bilingual Translation">
-    <meta name="keywords" content="Dutch law, civil procedure, Rv, Burgerlijke Rechtsvordering, legal translation, NL-EN">
-    <title>Code of Civil Procedure - Book 1 | NL-EN Translation</title>
+    <meta name="description" content="Complete Dutch Code of Civil Procedure (Wetboek van Burgerlijke Rechtsvordering) - Netherlands law with professional English translations. For lawyers, tax professionals, and legal translators.">
+    <meta name="keywords" content="Dutch law Netherlands, civil procedure, Wetboek van Burgerlijke Rechtsvordering, DCCP, legal translation NL-EN, Dutch Code Civil Procedure, Netherlands legislation, Rv, procedural law">
+    <meta name="author" content="Burrough / Machon / Oranje / Frakes / Visser">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Netherlands Code of Civil Procedure | Complete NL-EN Translation">
+    <meta property="og:description" content="Complete professional translation of Dutch Code of Civil Procedure for lawyers and tax professionals">
+    <meta property="og:type" content="website">
+    <link rel="canonical" content="https://kingoftheace2.github.io/legislation-library-translation-dictionary/legislation.html">
+    <title>Netherlands Code of Civil Procedure | Complete NL-EN Translation</title>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegislationObject",
+      "name": "Dutch Code of Civil Procedure (Wetboek van Burgerlijke Rechtsvordering)",
+      "description": "Complete Netherlands Code of Civil Procedure with professional English translation",
+      "inLanguage": ["nl-NL", "en-GB"],
+      "jurisdiction": {
+        "@type": "AdministrativeArea",
+        "name": "Netherlands"
+      },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "author": {
+        "@type": "Organization",
+        "name": "Burrough / Machon / Oranje / Frakes / Visser"
+      }
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -576,8 +602,14 @@
 
             let currentSection = '';
             let html = '';
+            let skipNext = false;
 
             filtered.forEach((article, index) => {
+                if (skipNext) {
+                    skipNext = false;
+                    return;
+                }
+
                 // Detect section titles (all caps)
                 const isSection = article.source === article.source.toUpperCase() &&
                                   article.source.length > 20;
@@ -586,6 +618,13 @@
                     currentSection = article.source;
                     html += `<div class="section-title">${escapeHtml(article.target)}<br><small style="opacity: 0.9; font-size: 0.9rem;">${escapeHtml(article.source)}</small></div>`;
                 } else {
+                    // Check if this is an article number (e.g., "Artikel 7")
+                    const isArticle = article.source.match(/^Artikel \d+/);
+
+                    // Check if the next item is a lidnummer (e.g., "1.", "2.", "3.")
+                    const nextArticle = index + 1 < filtered.length ? filtered[index + 1] : null;
+                    const nextIsLidnummer = nextArticle && nextArticle.source.match(/^\d+\.$/);
+
                     const hasMatch = searchTerm && (
                         article.source.toLowerCase().includes(searchTerm) ||
                         article.target.toLowerCase().includes(searchTerm)
@@ -593,27 +632,81 @@
 
                     const highlightClass = hasMatch ? 'highlight' : '';
 
-                    html += `<div class="article ${highlightClass}">`;
+                    // If this is an article and next is lidnummer, combine them in a table
+                    if (isArticle && nextIsLidnummer) {
+                        html += `<div class="article ${highlightClass}">`;
 
-                    if (currentView === 'both' || currentView === 'nl') {
-                        html += `
-                            <div class="article-text article-nl">
-                                <span class="lang-label">Nederlands</span><br>
-                                ${highlightText(escapeHtml(article.source), searchTerm)}
-                            </div>
-                        `;
+                        if (currentView === 'both' || currentView === 'nl' || currentView === 'en') {
+                            html += `
+                                <table style="width: 100%; border-collapse: collapse; margin-bottom: 0.75rem;">
+                                    <thead>
+                                        <tr>
+                                            ${currentView === 'both' || currentView === 'nl' ? '<th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ccc;"><span class="lang-label">Nederlands</span></th>' : ''}
+                                            ${currentView === 'both' || currentView === 'en' ? '<th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ccc;"><span class="lang-label">English</span></th>' : ''}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            ${currentView === 'both' || currentView === 'nl' ? `<td style="padding: 0.5rem; border-bottom: 1px solid #eee;">${highlightText(escapeHtml(article.source + ' ' + nextArticle.source), searchTerm)}</td>` : ''}
+                                            ${currentView === 'both' || currentView === 'en' ? `<td style="padding: 0.5rem; border-bottom: 1px solid #eee;">${highlightText(escapeHtml(article.target + ' ' + nextArticle.target), searchTerm)}</td>` : ''}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            `;
+                        }
+
+                        html += `</div>`;
+                        skipNext = true; // Skip the next item since we already included it
                     }
+                    // If this is just an article without lidnummer, use table format
+                    else if (isArticle) {
+                        html += `<div class="article ${highlightClass}">`;
 
-                    if (currentView === 'both' || currentView === 'en') {
-                        html += `
-                            <div class="article-text article-en">
-                                <span class="lang-label">English</span><br>
-                                ${highlightText(escapeHtml(article.target), searchTerm)}
-                            </div>
-                        `;
+                        if (currentView === 'both' || currentView === 'nl' || currentView === 'en') {
+                            html += `
+                                <table style="width: 100%; border-collapse: collapse; margin-bottom: 0.75rem;">
+                                    <thead>
+                                        <tr>
+                                            ${currentView === 'both' || currentView === 'nl' ? '<th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ccc;"><span class="lang-label">Nederlands</span></th>' : ''}
+                                            ${currentView === 'both' || currentView === 'en' ? '<th style="text-align: left; padding: 0.5rem; border-bottom: 2px solid #ccc;"><span class="lang-label">English</span></th>' : ''}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            ${currentView === 'both' || currentView === 'nl' ? `<td style="padding: 0.5rem; border-bottom: 1px solid #eee;">${highlightText(escapeHtml(article.source), searchTerm)}</td>` : ''}
+                                            ${currentView === 'both' || currentView === 'en' ? `<td style="padding: 0.5rem; border-bottom: 1px solid #eee;">${highlightText(escapeHtml(article.target), searchTerm)}</td>` : ''}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            `;
+                        }
+
+                        html += `</div>`;
                     }
+                    // Regular text - display as before
+                    else {
+                        html += `<div class="article ${highlightClass}">`;
 
-                    html += `</div>`;
+                        if (currentView === 'both' || currentView === 'nl') {
+                            html += `
+                                <div class="article-text article-nl">
+                                    <span class="lang-label">Nederlands</span><br>
+                                    ${highlightText(escapeHtml(article.source), searchTerm)}
+                                </div>
+                            `;
+                        }
+
+                        if (currentView === 'both' || currentView === 'en') {
+                            html += `
+                                <div class="article-text article-en">
+                                    <span class="lang-label">English</span><br>
+                                    ${highlightText(escapeHtml(article.target), searchTerm)}
+                                </div>
+                            `;
+                        }
+
+                        html += `</div>`;
+                    }
                 }
             });
 
