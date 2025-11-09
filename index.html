@@ -1373,6 +1373,12 @@ print(f"Found {len(results)} matches")</div>
             performSearch();
         });
 
+        // Advanced filter event listeners
+        document.getElementById('jurisdictionFilter')?.addEventListener('change', performSearch);
+        document.getElementById('sourceFilter')?.addEventListener('change', performSearch);
+        document.getElementById('licenseFilter')?.addEventListener('change', performSearch);
+        document.getElementById('smeFilter')?.addEventListener('change', performSearch);
+
         function performSearch() {
             const searchTerm = searchInput.value.toLowerCase().trim();
 
@@ -1383,9 +1389,69 @@ print(f"Found {len(results)} matches")</div>
 
             let results = dictionaryData;
 
-            // Apply review filter
+            // Apply jurisdiction filter
+            const jurisdictionFilter = document.getElementById('jurisdictionFilter')?.value || 'all';
+            if (jurisdictionFilter !== 'all') {
+                results = results.filter(term => {
+                    const source = term.author || term.source || '';
+                    if (jurisdictionFilter === 'netherlands') {
+                        return source.toLowerCase().includes('raad van de rechtspraak') ||
+                               source.toLowerCase().includes('business.gov.nl') ||
+                               source.toLowerCase().includes('dutch') ||
+                               source.toLowerCase().includes('netherlands') ||
+                               term['lang-source'] === 'nl-nl';
+                    } else if (jurisdictionFilter === 'france') {
+                        return source.toLowerCase().includes('ministère de la justice') ||
+                               source.toLowerCase().includes('france') ||
+                               source.toLowerCase().includes('french') ||
+                               term['lang-source'] === 'fr-fr';
+                    }
+                    return true;
+                });
+            }
+
+            // Apply advanced search filters
+            const sourceFilter = document.getElementById('sourceFilter')?.value || 'all';
+            const licenseFilter = document.getElementById('licenseFilter')?.value || 'all';
+            const smeFilter = document.getElementById('smeFilter')?.value || 'all';
+
+            if (sourceFilter !== 'all') {
+                results = results.filter(term => {
+                    const source = (term.author || term.source || '').toLowerCase();
+                    if (sourceFilter === 'judiciary') {
+                        return source.includes('raad van de rechtspraak');
+                    } else if (sourceFilter === 'business') {
+                        return source.includes('business.gov.nl');
+                    } else if (sourceFilter === 'experts') {
+                        return source.includes('burrough') || source.includes('machon') ||
+                               source.includes('oranje') || source.includes('frakes') ||
+                               source.includes('visser');
+                    }
+                    return true;
+                });
+            }
+
+            if (licenseFilter !== 'all') {
+                results = results.filter(term => {
+                    const license = (term.license || '').toLowerCase();
+                    if (licenseFilter === 'cc0') {
+                        return license.includes('cc0');
+                    } else if (licenseFilter === 'cc-by') {
+                        return license.includes('cc by 4.0');
+                    } else if (licenseFilter === 'cc-by-nc') {
+                        return license.includes('cc by-nc');
+                    }
+                    return true;
+                });
+            }
+
+            if (smeFilter === 'reviewed') {
+                results = results.filter(term => term['sme-reviewed'] === true || term['sme-reviewed'] === 'yes');
+            }
+
+            // Apply legacy review filter (keep for compatibility)
             if (currentFilter === 'reviewed') {
-                results = results.filter(term => term['sme-reviewed'] === 'yes');
+                results = results.filter(term => term['sme-reviewed'] === 'yes' || term['sme-reviewed'] === true);
             }
 
             // Apply search

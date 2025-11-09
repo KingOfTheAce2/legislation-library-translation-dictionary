@@ -175,10 +175,10 @@ def main():
     print("=" * 60)
 
     # File paths
-    legislation_file = '../i8n/netherlands/NL-EN-civil-procedure-all.json'
-    glossary_file = '../i8n/netherlands/NL-EN-legal-glossary.json'
+    legislation_file = '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-all.json'
+    glossary_file = '../legal-data/netherlands/dictionaries/NL-EN-legal-glossary.json'
     output_legislation = '../i8n/netherlands/NL-EN-civil-procedure-all-merged.json'
-    output_new_terms = '../i8n/netherlands/NL-EN-legislation-extracted-terms.json'
+    output_new_terms = '../legal-data/netherlands/dictionaries/NL-EN-legislation-extracted-terms.json'
 
     # Load files
     print("\n1. Loading files...")
