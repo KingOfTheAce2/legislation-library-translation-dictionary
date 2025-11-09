@@ -55,7 +55,7 @@ def parse_tmx(filename):
 
 def main():
     input_file = 'book 4 (para level).tmx'
-    output_file = '../i8n/NL-EN-civil-procedure-book4.json'
+    output_file = '../i8n/netherlands/NL-EN-civil-procedure-book4.json'
 
     print(f"Parsing {input_file}...")
     translations = parse_tmx(input_file)

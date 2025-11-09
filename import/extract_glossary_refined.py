@@ -154,9 +154,9 @@ def main():
     print("=" * 70)
 
     # Load files
-    legislation_file = '../i8n/NL-EN-civil-procedure-all.json'
-    glossary_file = '../i8n/NL-EN-legal-glossary.json'
-    output_file = '../i8n/NL-EN-legislation-glossary-additions.json'
+    legislation_file = '../i8n/netherlands/NL-EN-civil-procedure-all.json'
+    glossary_file = '../i8n/netherlands/NL-EN-legal-glossary.json'
+    output_file = '../i8n/netherlands/NL-EN-legislation-glossary-additions.json'
 
     print("\nLoading files...")
     legislation = load_json(legislation_file)

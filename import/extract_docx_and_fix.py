@@ -98,7 +98,7 @@ def main():
     print("=" * 80)
 
     # Load incomplete translations report
-    report_file = '../i8n/incomplete-translations-report.json'
+    report_file = '../i8n/netherlands/incomplete-translations-report.json'
     print(f"\nLoading incomplete translations report...")
 
     with open(report_file, 'r', encoding='utf-8') as f:
@@ -122,9 +122,9 @@ def main():
 
     # Load all legislation files
     legislation_files = {
-        'Book 1': '../i8n/NL-EN-civil-procedure-book1.json',
-        'Books 2-3': '../i8n/NL-EN-civil-procedure-book2-3.json',
-        'Book 4': '../i8n/NL-EN-civil-procedure-book4.json'
+        'Book 1': '../i8n/netherlands/NL-EN-civil-procedure-book1.json',
+        'Books 2-3': '../i8n/netherlands/NL-EN-civil-procedure-book2-3.json',
+        'Book 4': '../i8n/netherlands/NL-EN-civil-procedure-book4.json'
     }
 
     all_data = {}
@@ -219,7 +219,7 @@ def main():
         if book in all_data:
             combined.extend(all_data[book])
 
-    combined_file = '../i8n/NL-EN-civil-procedure-all.json'
+    combined_file = '../i8n/netherlands/NL-EN-civil-procedure-all.json'
     with open(combined_file, 'w', encoding='utf-8') as f:
         json.dump(combined, f, ensure_ascii=False, indent=2)
     print(f"[OK] Saved {combined_file}")
