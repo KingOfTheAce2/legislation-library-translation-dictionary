@@ -69,6 +69,12 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo:hover {
+            opacity: 0.9;
         }
 
         .nav-links {
@@ -489,14 +495,15 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <span>⚖️</span>
-                <span>Dutch-English Legal Dictionary</span>
-            </div>
+                <span>Translation Dictionary</span>
+            </a>
             <nav class="nav-links">
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">API</a>
-                <a href="#" class="nav-link" onclick="showPremiumModal(); return false;">Upgrade</a>
+                <a href="index.html" class="nav-link">← Home</a>
+                <a href="monolingual-dictionary.html" class="nav-link">Monolingual Dictionary</a>
+                <a href="legislation.html" class="nav-link">Legislation Library</a>
+                <a href="authors-licenses.html" class="nav-link">Authors & Licenses</a>
             </nav>
         </div>
     </header>
@@ -516,12 +523,6 @@
 
             <div class="search-filters">
                 <span class="filter-label">Filters:</span>
-                <select id="sourceFilter" class="filter-select" onchange="performSearch()">
-                    <option value="all">All Sources</option>
-                    <option value="civil-procedure">Civil Procedure</option>
-                    <option value="legal-dictionary">Legal Dictionary</option>
-                    <option value="legal-glossary">Legal Glossary</option>
-                </select>
                 <select id="reviewFilter" class="filter-select" onchange="performSearch()">
                     <option value="all">All Terms</option>
                     <option value="reviewed">Subject Matter Expert Reviewed Only</option>
@@ -569,7 +570,6 @@
         // Dictionary data
         let dictionaryData = [];
         let currentFilters = {
-            source: 'all',
             review: 'all',
             license: 'all'
         };
@@ -631,15 +631,6 @@
 
                     return termMatch || translationMatch || exampleMatch;
                 });
-            }
-
-            // Apply source filter
-            if (currentFilters.source !== 'all') {
-                results = results.filter(term =>
-                    term.translations.some(t =>
-                        t['source-type'].toLowerCase().includes(currentFilters.source)
-                    )
-                );
             }
 
             // Apply review filter
@@ -828,11 +819,6 @@
         }
 
         // Filter handlers
-        document.getElementById('sourceFilter').addEventListener('change', function() {
-            currentFilters.source = this.value;
-            performSearch();
-        });
-
         document.getElementById('reviewFilter').addEventListener('change', function() {
             currentFilters.review = this.value;
             performSearch();
