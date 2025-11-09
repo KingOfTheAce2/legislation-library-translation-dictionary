@@ -54,6 +54,50 @@
             --success: #48bb78;
         }
 
+        /* Dark Mode */
+        [data-theme="dark"] {
+            --primary: #60a5fa;
+            --secondary: #3b82f6;
+            --accent: #93c5fd;
+            --bg: #1e293b;
+            --bg-secondary: #0f172a;
+            --text: #e2e8f0;
+            --text-light: #94a3b8;
+            --border: #334155;
+            --success: #4ade80;
+        }
+
+        [data-theme="dark"] .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        [data-theme="dark"] input[type="search"],
+        [data-theme="dark"] select {
+            background: var(--bg-secondary);
+            color: var(--text);
+            border-color: var(--border);
+        }
+
+        [data-theme="dark"] .search-section,
+        [data-theme="dark"] .results-container,
+        [data-theme="dark"] .api-section,
+        [data-theme="dark"] .support-section {
+            background: var(--bg-secondary);
+        }
+
+        [data-theme="dark"] .direction-btn.active {
+            background: var(--bg);
+        }
+
+        [data-theme="dark"] .export-btn {
+            background: var(--bg-secondary);
+        }
+
+        [data-theme="dark"] .highlight {
+            background: #854d0e;
+            color: #fef08a;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -543,12 +587,155 @@
             margin-bottom: 0.5rem;
         }
 
+        /* New Toolbar Controls */
+        .toolbar {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .icon-btn {
+            padding: 0.6rem 1rem;
+            border: 2px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .icon-btn:hover {
+            border-color: var(--accent);
+            background: var(--bg-secondary);
+        }
+
+        .icon-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(20deg) scale(1.1);
+            background: var(--accent);
+        }
+
+        .search-history {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+        }
+
+        .search-history.active {
+            display: block;
+        }
+
+        .history-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .history-item:hover {
+            background: var(--bg-secondary);
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .clear-history {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .clear-history:hover {
+            color: var(--accent);
+        }
+
+        .favorites-panel {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .favorites-panel.active {
+            display: block;
+        }
+
+        .favorite-star {
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            transition: all 0.2s;
+        }
+
+        .favorite-star:hover,
+        .favorite-star.active {
+            color: #f59e0b;
+            transform: scale(1.2);
+        }
+
+        .badge-count {
+            background: var(--accent);
+            color: white;
+            border-radius: 10px;
+            padding: 0.15rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.25rem;
+        }
+
         @media print {
             .search-section,
             .export-toolbar,
             .support-section,
             .footer,
-            .header .stats {
+            .header .stats,
+            .toolbar,
+            .favorites-panel {
                 display: none;
             }
 
@@ -596,12 +783,54 @@
                         placeholder="Search legal terms..."
                         autocomplete="off"
                     >
+                    <div class="search-history" id="searchHistory"></div>
                 </div>
                 <div class="direction-toggle">
                     <button class="direction-btn active" data-direction="both">Both</button>
                     <button class="direction-btn" data-direction="nl-en">NL → EN</button>
                     <button class="direction-btn" data-direction="en-nl">EN → NL</button>
                 </div>
+            </div>
+
+            <!-- New Toolbar -->
+            <div class="toolbar">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <select id="jurisdictionFilter" style="flex: 1; min-width: 150px;">
+                    <option value="all">All Jurisdictions</option>
+                    <option value="netherlands">Netherlands</option>
+                    <option value="france">France</option>
+                </select>
+                <button class="icon-btn" id="favoritesToggle" onclick="toggleFavorites()">
+                    ⭐ Favorites <span class="badge-count" id="favoritesCount">0</span>
+                </button>
+                <button class="icon-btn" id="advancedSearchToggle" onclick="toggleAdvancedSearch()">
+                    🔍 Advanced
+                </button>
+            </div>
+
+            <!-- Advanced Search Filters (Hidden by default) -->
+            <div class="filters" id="advancedFilters" style="display: none; padding: 1rem; background: var(--bg-secondary); border-radius: 8px; margin: 1rem 0;">
+                <span class="filter-label">Source:</span>
+                <select id="sourceFilter">
+                    <option value="all">All Sources</option>
+                    <option value="judiciary">Raad van de Rechtspraak</option>
+                    <option value="business">business.gov.nl</option>
+                    <option value="experts">Civil Procedure Experts</option>
+                </select>
+                <span class="filter-label">License:</span>
+                <select id="licenseFilter">
+                    <option value="all">All Licenses</option>
+                    <option value="cc0">CC0 (Public Domain)</option>
+                    <option value="cc-by">CC BY 4.0</option>
+                    <option value="cc-by-nc">CC BY-NC 4.0</option>
+                </select>
+                <span class="filter-label">Status:</span>
+                <select id="smeFilter">
+                    <option value="all">All Terms</option>
+                    <option value="reviewed">SME Reviewed Only</option>
+                </select>
             </div>
 
             <div class="filters">
@@ -636,6 +865,17 @@
                 <button class="export-btn" onclick="showAPIModal()" style="border-color: #10b981; color: #10b981;">
                     🔌 API Access
                 </button>
+            </div>
+        </div>
+
+        <!-- Favorites Panel -->
+        <div class="favorites-panel" id="favoritesPanel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3>⭐ Your Favorites</h3>
+                <button class="icon-btn" onclick="clearFavorites()" style="font-size: 0.85rem;">Clear All</button>
+            </div>
+            <div id="favoritesContainer">
+                <p style="color: var(--text-light); text-align: center; padding: 2rem;">No favorites yet. Click the star on any term to save it!</p>
             </div>
         </div>
 
@@ -858,6 +1098,191 @@ print(f"Found {len(results)} matches")</div>
         let currentFilter = 'all';
         let currentSort = 'alpha';
 
+        // ===== NEW FEATURES =====
+        // Dark Mode Management
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+
+        // Apply saved theme
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Search History Management
+        let searchHistory = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+        const MAX_HISTORY = 5;
+
+        function addToSearchHistory(term) {
+            if (!term || term.length < 2) return;
+
+            // Remove if already exists
+            searchHistory = searchHistory.filter(item => item !== term);
+
+            // Add to beginning
+            searchHistory.unshift(term);
+
+            // Keep only last 5
+            searchHistory = searchHistory.slice(0, MAX_HISTORY);
+
+            localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+            updateSearchHistoryUI();
+        }
+
+        function updateSearchHistoryUI() {
+            const historyContainer = document.getElementById('searchHistory');
+            if (searchHistory.length === 0) {
+                historyContainer.classList.remove('active');
+                return;
+            }
+
+            historyContainer.innerHTML = searchHistory.map(term =>
+                `<div class="history-item" onclick="useHistorySearch('${term.replace(/'/g, "\\'")}')">
+                    <span>${term}</span>
+                    <span class="clear-history" onclick="event.stopPropagation(); removeFromHistory('${term.replace(/'/g, "\\'")}')">&times;</span>
+                </div>`
+            ).join('');
+        }
+
+        function useHistorySearch(term) {
+            document.getElementById('searchInput').value = term;
+            document.getElementById('searchHistory').classList.remove('active');
+            filterResults();
+        }
+
+        function removeFromHistory(term) {
+            searchHistory = searchHistory.filter(item => item !== term);
+            localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+            updateSearchHistoryUI();
+        }
+
+        // Show history on focus
+        document.getElementById('searchInput').addEventListener('focus', () => {
+            if (searchHistory.length > 0) {
+                document.getElementById('searchHistory').classList.add('active');
+            }
+        });
+
+        // Hide history on click outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-box')) {
+                document.getElementById('searchHistory').classList.remove('active');
+            }
+        });
+
+        // Favorites Management
+        let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+        function toggleFavorite(termId, termData) {
+            const index = favorites.findIndex(f => f.id === termId);
+
+            if (index > -1) {
+                favorites.splice(index, 1);
+            } else {
+                favorites.push({ id: termId, data: termData, addedAt: new Date().toISOString() });
+            }
+
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            updateFavoritesCount();
+            updateFavoriteStars();
+
+            // If favorites panel is open, refresh it
+            if (document.getElementById('favoritesPanel').classList.contains('active')) {
+                displayFavorites();
+            }
+        }
+
+        function updateFavoritesCount() {
+            document.getElementById('favoritesCount').textContent = favorites.length;
+        }
+
+        function updateFavoriteStars() {
+            document.querySelectorAll('.favorite-star').forEach(star => {
+                const termId = star.dataset.termId;
+                if (favorites.some(f => f.id === termId)) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function toggleFavorites() {
+            const panel = document.getElementById('favoritesPanel');
+            const btn = document.getElementById('favoritesToggle');
+
+            if (panel.classList.contains('active')) {
+                panel.classList.remove('active');
+                btn.classList.remove('active');
+            } else {
+                panel.classList.add('active');
+                btn.classList.add('active');
+                displayFavorites();
+            }
+        }
+
+        function displayFavorites() {
+            const container = document.getElementById('favoritesContainer');
+
+            if (favorites.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-light); text-align: center; padding: 2rem;">No favorites yet. Click the star on any term to save it!</p>';
+                return;
+            }
+
+            container.innerHTML = favorites.map(fav => {
+                const term = fav.data;
+                return `
+                    <div class="term-card">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div style="flex: 1;">
+                                <div class="term-source">${term.source}</div>
+                                <div class="term-target">${term.target}</div>
+                                ${term['lang-target-dict'] ? `<div style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">${term['lang-target-dict']}</div>` : ''}
+                            </div>
+                            <span class="favorite-star active" data-term-id="${fav.id}" onclick="toggleFavorite('${fav.id}', ${JSON.stringify(term).replace(/"/g, '&quot;')})">⭐</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function clearFavorites() {
+            if (confirm('Clear all favorites?')) {
+                favorites = [];
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                updateFavoritesCount();
+                displayFavorites();
+                updateFavoriteStars();
+            }
+        }
+
+        // Advanced Search Toggle
+        function toggleAdvancedSearch() {
+            const panel = document.getElementById('advancedFilters');
+            const btn = document.getElementById('advancedSearchToggle');
+
+            if (panel.style.display === 'none') {
+                panel.style.display = 'flex';
+                btn.classList.add('active');
+            } else {
+                panel.style.display = 'none';
+                btn.classList.remove('active');
+            }
+        }
+
+        // Initialize
+        updateFavoritesCount();
+        updateSearchHistoryUI();
+
+        // ===== END NEW FEATURES =====
+
         // Load unified dictionary JSON data
         fetch('unified-dictionary.json')
             .then(response => {
@@ -948,14 +1373,85 @@ print(f"Found {len(results)} matches")</div>
             performSearch();
         });
 
+        // Advanced filter event listeners
+        document.getElementById('jurisdictionFilter')?.addEventListener('change', performSearch);
+        document.getElementById('sourceFilter')?.addEventListener('change', performSearch);
+        document.getElementById('licenseFilter')?.addEventListener('change', performSearch);
+        document.getElementById('smeFilter')?.addEventListener('change', performSearch);
+
         function performSearch() {
             const searchTerm = searchInput.value.toLowerCase().trim();
 
+            // Save to search history
+            if (searchTerm && searchTerm.length >= 2) {
+                addToSearchHistory(searchTerm);
+            }
+
             let results = dictionaryData;
 
-            // Apply review filter
+            // Apply jurisdiction filter
+            const jurisdictionFilter = document.getElementById('jurisdictionFilter')?.value || 'all';
+            if (jurisdictionFilter !== 'all') {
+                results = results.filter(term => {
+                    const source = term.author || term.source || '';
+                    if (jurisdictionFilter === 'netherlands') {
+                        return source.toLowerCase().includes('raad van de rechtspraak') ||
+                               source.toLowerCase().includes('business.gov.nl') ||
+                               source.toLowerCase().includes('dutch') ||
+                               source.toLowerCase().includes('netherlands') ||
+                               term['lang-source'] === 'nl-nl';
+                    } else if (jurisdictionFilter === 'france') {
+                        return source.toLowerCase().includes('ministère de la justice') ||
+                               source.toLowerCase().includes('france') ||
+                               source.toLowerCase().includes('french') ||
+                               term['lang-source'] === 'fr-fr';
+                    }
+                    return true;
+                });
+            }
+
+            // Apply advanced search filters
+            const sourceFilter = document.getElementById('sourceFilter')?.value || 'all';
+            const licenseFilter = document.getElementById('licenseFilter')?.value || 'all';
+            const smeFilter = document.getElementById('smeFilter')?.value || 'all';
+
+            if (sourceFilter !== 'all') {
+                results = results.filter(term => {
+                    const source = (term.author || term.source || '').toLowerCase();
+                    if (sourceFilter === 'judiciary') {
+                        return source.includes('raad van de rechtspraak');
+                    } else if (sourceFilter === 'business') {
+                        return source.includes('business.gov.nl');
+                    } else if (sourceFilter === 'experts') {
+                        return source.includes('burrough') || source.includes('machon') ||
+                               source.includes('oranje') || source.includes('frakes') ||
+                               source.includes('visser');
+                    }
+                    return true;
+                });
+            }
+
+            if (licenseFilter !== 'all') {
+                results = results.filter(term => {
+                    const license = (term.license || '').toLowerCase();
+                    if (licenseFilter === 'cc0') {
+                        return license.includes('cc0');
+                    } else if (licenseFilter === 'cc-by') {
+                        return license.includes('cc by 4.0');
+                    } else if (licenseFilter === 'cc-by-nc') {
+                        return license.includes('cc by-nc');
+                    }
+                    return true;
+                });
+            }
+
+            if (smeFilter === 'reviewed') {
+                results = results.filter(term => term['sme-reviewed'] === true || term['sme-reviewed'] === 'yes');
+            }
+
+            // Apply legacy review filter (keep for compatibility)
             if (currentFilter === 'reviewed') {
-                results = results.filter(term => term['sme-reviewed'] === 'yes');
+                results = results.filter(term => term['sme-reviewed'] === 'yes' || term['sme-reviewed'] === true);
             }
 
             // Apply search
@@ -1012,34 +1508,45 @@ print(f"Found {len(results)} matches")</div>
 
             info.textContent = `Showing ${results.length} of ${dictionaryData.length} terms`;
 
-            const html = results.map(term => {
+            const html = results.map((term, index) => {
                 const source = highlightText(term.source, searchTerm);
                 const target = highlightText(term.target, searchTerm);
                 const isMonolingual = term.monolingual || term['lang-source'] === term['lang-target'];
+                const termId = `term_${term.source}_${term['lang-source']}_${index}`;
 
                 // For monolingual entries, show the definition if available
                 let displayContent = '';
                 if (isMonolingual && term['lang-source-dict']) {
                     const definition = highlightText(term['lang-source-dict'], searchTerm);
                     displayContent = `
-                        <div class="term-source">${source}</div>
-                        <div class="term-target" style="font-style: normal; color: var(--text-light);">${definition}</div>
-                        <div class="term-meta">
-                            <span class="meta-badge">📖 ${term['lang-source']} Dictionary</span>
-                            ${term['source-type'] ? `<span class="meta-badge">${term['source-type']}</span>` : ''}
-                            ${term['sme-reviewed'] === true || term['sme-reviewed'] === 'yes' ? '<span class="meta-badge verified-badge">✓ Subject Matter Expert Reviewed</span>' : ''}
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div style="flex: 1;">
+                                <div class="term-source">${source}</div>
+                                <div class="term-target" style="font-style: normal; color: var(--text-light);">${definition}</div>
+                                <div class="term-meta">
+                                    <span class="meta-badge">📖 ${term['lang-source']} Dictionary</span>
+                                    ${term['source-type'] ? `<span class="meta-badge">${term['source-type']}</span>` : ''}
+                                    ${term['sme-reviewed'] === true || term['sme-reviewed'] === 'yes' ? '<span class="meta-badge verified-badge">✓ Subject Matter Expert Reviewed</span>' : ''}
+                                </div>
+                            </div>
+                            <span class="favorite-star" data-term-id="${termId}" onclick='toggleFavorite("${termId}", ${JSON.stringify(term).replace(/'/g, "&#39;")})'>☆</span>
                         </div>
                     `;
                 } else {
                     // Bilingual translation entry
                     const targetDef = term['lang-target-dict'] ? `<div style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.25rem; font-style: normal;">${highlightText(term['lang-target-dict'], searchTerm)}</div>` : '';
                     displayContent = `
-                        <div class="term-source">${source}</div>
-                        <div class="term-target">→ ${target}${targetDef}</div>
-                        <div class="term-meta">
-                            <span class="meta-badge">${term['lang-source']} → ${term['lang-target']}</span>
-                            ${term['source-type'] ? `<span class="meta-badge">${term['source-type']}</span>` : ''}
-                            ${term['sme-reviewed'] === true || term['sme-reviewed'] === 'yes' ? '<span class="meta-badge verified-badge">✓ Subject Matter Expert Reviewed</span>' : ''}
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div style="flex: 1;">
+                                <div class="term-source">${source}</div>
+                                <div class="term-target">→ ${target}${targetDef}</div>
+                                <div class="term-meta">
+                                    <span class="meta-badge">${term['lang-source']} → ${term['lang-target']}</span>
+                                    ${term['source-type'] ? `<span class="meta-badge">${term['source-type']}</span>` : ''}
+                                    ${term['sme-reviewed'] === true || term['sme-reviewed'] === 'yes' ? '<span class="meta-badge verified-badge">✓ Subject Matter Expert Reviewed</span>' : ''}
+                                </div>
+                            </div>
+                            <span class="favorite-star" data-term-id="${termId}" onclick='toggleFavorite("${termId}", ${JSON.stringify(term).replace(/'/g, "&#39;")})'>☆</span>
                         </div>
                     `;
                 }
@@ -1048,6 +1555,9 @@ print(f"Found {len(results)} matches")</div>
             }).join('');
 
             container.innerHTML = html;
+
+            // Update favorite stars to show active state
+            setTimeout(updateFavoriteStars, 0);
         }
 
         function highlightText(text, searchTerm) {

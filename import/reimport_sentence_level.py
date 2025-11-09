@@ -76,17 +76,17 @@ def main():
         {
             'file': 'Book 1 sentenced.tmx',
             'book': 'Book 1',
-            'output': '../i8n/NL-EN-civil-procedure-book1.json'
+            'output': '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book1.json'
         },
         {
             'file': 'book 2-3 (sentence).tmx',
             'book': 'Books 2-3',
-            'output': '../i8n/NL-EN-civil-procedure-book2-3.json'
+            'output': '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book2-3.json'
         },
         {
             'file': 'book 4 (sentence level).tmx',
             'book': 'Book 4',
-            'output': '../i8n/NL-EN-civil-procedure-book4.json'
+            'output': '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book4.json'
         }
     ]
 
@@ -110,7 +110,7 @@ def main():
 
     # Create combined file
     if all_translations:
-        combined_output = '../i8n/NL-EN-civil-procedure-all.json'
+        combined_output = '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-all.json'
         with open(combined_output, 'w', encoding='utf-8') as f:
             json.dump(all_translations, f, ensure_ascii=False, indent=2)
 

@@ -55,7 +55,7 @@ def parse_tmx(filename):
 
 def main():
     input_file = 'Book 1 paragraphed.tmx'
-    output_file = '../i8n/NL-EN-civil-procedure-book1.json'
+    output_file = '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book1.json'
 
     print(f"Parsing {input_file}...")
     translations = parse_tmx(input_file)

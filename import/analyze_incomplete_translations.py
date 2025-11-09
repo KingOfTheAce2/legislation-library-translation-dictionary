@@ -66,9 +66,9 @@ def main():
 
     # Load data
     files = [
-        '../i8n/NL-EN-civil-procedure-book1.json',
-        '../i8n/NL-EN-civil-procedure-book2-3.json',
-        '../i8n/NL-EN-civil-procedure-book4.json'
+        '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book1.json',
+        '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book2-3.json',
+        '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book4.json'
     ]
 
     all_incomplete = []
@@ -112,7 +112,7 @@ def main():
         print()
 
     # Save report
-    output_file = '../i8n/incomplete-translations-report.json'
+    output_file = '../legal-data/netherlands/reports/incomplete-translations-report.json'
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(all_incomplete, f, ensure_ascii=False, indent=2)
 

@@ -6,9 +6,9 @@ import json
 
 def main():
     # Load all books
-    book1_file = '../i8n/NL-EN-civil-procedure-book1.json'
-    book2_3_file = '../i8n/NL-EN-civil-procedure-book2-3.json'
-    book4_file = '../i8n/NL-EN-civil-procedure-book4.json'
+    book1_file = '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book1.json'
+    book2_3_file = '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book2-3.json'
+    book4_file = '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-book4.json'
 
     all_translations = []
 
@@ -31,7 +31,7 @@ def main():
         print(f"Loaded {len(book4)} translations from Book 4")
 
     # Save combined file
-    output_file = '../i8n/NL-EN-civil-procedure-all.json'
+    output_file = '../legal-data/netherlands/legislation/civil-procedure/NL-EN-civil-procedure-all.json'
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(all_translations, f, ensure_ascii=False, indent=2)
 

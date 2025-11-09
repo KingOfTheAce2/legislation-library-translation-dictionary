@@ -159,7 +159,7 @@ if __name__ == "__main__":
     terms = scrape_rechtspraak_terms()
 
     if terms:
-        output_file = "i8n/NL-legal-dictionary.json"
+        output_file = "legal-data/netherlands/dictionaries/NL-legal-dictionary.json"
         save_dictionary(terms, output_file)
 
         # Print first few terms as example
