@@ -1,8 +1,18 @@
 # Legal Jurisdictions & Sources Research Report
 
+**⚠️ IMPORTANT: This report has been superseded by `OPEN-DATA-LEGAL-SOURCES-VERIFIED.md`**
+
+**❌ WARNING: Many sources in this report do NOT have verified open licenses!**
+
+This initial research did not properly distinguish between "free access" and "open data with reuse rights." Please refer to **OPEN-DATA-LEGAL-SOURCES-VERIFIED.md** for the corrected report with verified licenses only.
+
+**Kept for historical reference only.**
+
+---
+
 **Date:** November 12, 2025
 **Research Branch:** `claude/research-law-translations-011CV3am5MgQeXDMDzF6EfpM`
-**Status:** Comprehensive research completed
+**Status:** ~~Comprehensive research completed~~ DEPRECATED - See OPEN-DATA-LEGAL-SOURCES-VERIFIED.md
 
 ## Executive Summary
 
