@@ -4,6 +4,21 @@
 **Research Branch:** `claude/research-law-translations-011CV3am5MgQeXDMDzF6EfpM`
 **Status:** ✅ **Licenses Verified - Global Coverage**
 
+## ⚠️ IMPORTANT: SME Review Status
+
+**All sources in this report are in RESEARCH PHASE and have NOT YET been reviewed by Subject Matter Experts.**
+
+- ✅ **License verification:** COMPLETED - All sources confirmed to have open licenses
+- ✅ **Technical feasibility:** VERIFIED - Download methods and formats confirmed
+- ❌ **Subject Matter Expert review:** NOT YET COMPLETED - Terms require legal expert verification before publication
+- ❌ **Term extraction:** NOT YET STARTED - Terminology has not been extracted from these sources
+- ❌ **Quality assurance:** PENDING - Legal accuracy and translation quality not yet assessed
+
+**SME Review Required Before Integration:**
+Each source must undergo expert review by legal professionals familiar with the respective jurisdiction before terms can be added to the public dictionary. This ensures accuracy, proper legal context, and terminology appropriateness.
+
+---
+
 ## Project Goal: Extracting Legal Terminology from Translated Documents
 
 This report identifies **translated legal documents** (constitutions, codes, treaties) that can be used to extract bilingual/multilingual glossary terms. Focus is on parallel texts where terminology can be mined from translations.
@@ -42,6 +57,9 @@ This research covers **global jurisdictions** including:
 
 These sources have been verified to have open licenses permitting commercial reuse and redistribution.
 
+**⚠️ SME Review Status for All Sources Below:**
+All 33 sources listed in this section are in the **research/verification phase**. Licenses have been confirmed as open, but **terms have NOT yet been extracted or reviewed by Subject Matter Experts**. Each source will require expert review by legal professionals before integration into the public dictionary.
+
 ### 1. EUR-Lex (European Union) 🇪🇺
 **Priority: HIGHEST** ⭐⭐⭐
 
@@ -59,6 +77,11 @@ These sources have been verified to have open licenses permitting commercial reu
 - ✅ Redistribution allowed
 - ✅ Derivative works allowed
 - ✅ Only requirement: Attribution
+
+**SME Review Status:** ❌ NOT YET REVIEWED
+- Terms not yet extracted from this source
+- Requires review by EU law experts before integration
+- Quality assurance: Pending
 
 **Verification Source:** https://eur-lex.europa.eu/content/legal-notice/legal-notice.html
 - "You can re-use the legal documents published in EUR-Lex for commercial or non-commercial purposes"

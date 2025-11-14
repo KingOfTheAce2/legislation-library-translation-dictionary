@@ -1,26 +1,42 @@
-# ⚖️ Netherlands Legal Dictionary & Legislation Library
+# ⚖️ International Legal Dictionary & Legislation Library
 
-**The Legislation Library is the main project.** The legal dictionary originated as a spin-off and has now been integrated back into this comprehensive resource.
-
-A professional legal resource for **lawyers**, **tax professionals**, and **legal translators** covering Netherlands legal terminology and complete legislation translations.
+**A global open-access legal terminology resource** for **lawyers**, **tax professionals**, **legal translators**, and **researchers** worldwide.
 
 **[📖 View the Dictionary](https://kingoftheace2.github.io/legislation-library-translation-dictionary/)**
 **[📜 View Legislation Library](https://kingoftheace2.github.io/legislation-library-translation-dictionary/legislation.html)**
 **[📜 Authors & Licenses](https://kingoftheace2.github.io/legislation-library-translation-dictionary/authors-licenses.html)**
 
-## 🌍 Important: Netherlands Legal Context
+## 🌍 International Scope
 
-**⚠️ This is a Netherlands Dutch (nl-NL) legal dictionary and legislation library.** All terms, definitions, and legislation are specific to **Dutch law as applied in the Netherlands**, even when displayed in other languages (English, French, German, Spanish). This resource is NOT applicable to Dutch law in Belgium, Suriname, or other Dutch-speaking jurisdictions.
+This project provides **verified open-access legal terminology** from jurisdictions worldwide:
+
+- **Current Implementation:** Netherlands legal terminology and Code of Civil Procedure (3,400+ terms, 3,118 translation segments)
+- **Research Completed:** 33 verified open-data sources covering **80+ languages** across Europe, Americas, Asia, Africa, and Middle East
+- **Estimated Global Capacity:** 808,000-1,193,000 legal terms from international sources ready for integration
+
+### 📍 Jurisdiction-Specific Content
+
+**Netherlands (Current Implementation):**
+All current dictionary terms and legislation are specific to **Dutch law as applied in the Netherlands** (nl-NL), even when displayed in other languages. This content is NOT applicable to Dutch law in Belgium, Suriname, or other Dutch-speaking jurisdictions.
+
+**Future Jurisdictions (Research Phase):**
+See [OPEN-DATA-LEGAL-SOURCES-VERIFIED.md](OPEN-DATA-LEGAL-SOURCES-VERIFIED.md) for researched sources covering EU, Switzerland, France, UK, USA, Canada, Japan, South Korea, South Africa (11 languages), India (22+ languages), and 50+ other jurisdictions.
 
 ## 📊 Overview
 
-- **3,400+ professional legal terms** including both translations and monolingual dictionaries
-- **3,118 legislation translation segments** - Complete Dutch Code of Civil Procedure (optimized for readability)
-- **Subject Matter Expert reviewed** by legal professionals and judicial authorities
+**Current Implementation (Netherlands):**
+- **3,400+ professional legal terms** (Netherlands law) - Subject Matter Expert reviewed
+- **3,118 legislation translation segments** - Complete Dutch Code of Civil Procedure
 - **Multilingual support** (NL ↔ EN, FR, DE, ES)
 - **Monolingual dictionaries** (NL-NL Dutch legal definitions, FR-FR French legal definitions)
-- **Open licenses** (CC BY 4.0, CC0, Licence Ouverte 2.0) - free and open access
-- **Multiple authoritative sources:** Raad van de Rechtspraak (Dutch Judiciary), Dutch Ministry of Finance, business.gov.nl, legal translation experts, and more
+- **Authoritative sources:** Raad van de Rechtspraak (Dutch Judiciary), Dutch Ministry of Finance, business.gov.nl, legal translation experts
+
+**Research Completed (Global Expansion):**
+- **33 verified open-data sources** across 80+ languages
+- **808,000-1,193,000 estimated terms** from international jurisdictions
+- **Geographic coverage:** Europe (11 sources), Americas & International (12 sources), Asia-Pacific (7 sources), Africa & Middle East (5 sources)
+- **All open licenses:** CC BY 4.0, CC0, CC BY-NC-SA, OGL v3.0, Apache 2.0, Public Domain
+- **Source provenance:** Each source includes jurisdiction, license, and SME review status
 
 ## ✨ Features
 
@@ -243,9 +259,23 @@ This is an open-access project. Contributions are welcome!
 - ✅ Multiple licenses (CC BY 4.0, CC0)
 
 ### Future Plans
-- 📝 Expand to other Dutch legislation (Criminal Code, Civil Code, etc.)
+
+**Phase 1: Infrastructure (Next)**
+- 📊 Source attribution system - Track jurisdiction and license for each term
+- 🏷️ SME review workflow - Flag terms requiring expert verification
+- 🌐 Multi-jurisdiction database structure - Support terms from multiple legal systems
+- 🔍 Advanced filtering - Search by jurisdiction, language pair, legal domain
+
+**Phase 2: International Content Integration**
+- 🇪🇺 EUR-Lex integration - 50,000-100,000 EU legal terms (24 languages)
+- 🇨🇭 Swiss Federal Supreme Court - 40,000-60,000 terms (DE, FR, IT)
+- 🇿🇦 South Africa Constitution - 30,000+ terms (11 official languages)
+- 🇮🇳 India Constitution - 60,000+ terms (22+ languages)
+- 🌍 UN Parallel Corpus - 30,000-50,000 international law terms (6 UN languages)
+
+**Phase 3: Advanced Features**
+- 📝 Additional Netherlands legislation (Criminal Code, Civil Code)
 - 🔗 Cross-reference links between dictionary and legislation
-- 🌐 Add more language pairs for legislation
 - 📑 Article number indexing and navigation
 - 🔊 Audio pronunciation guides
 - 💾 Enhanced export functionality (PDF, CSV, XML)
