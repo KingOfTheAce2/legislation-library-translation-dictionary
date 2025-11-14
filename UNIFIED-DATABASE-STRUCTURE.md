@@ -2,11 +2,14 @@
 
 ## Overview
 This structure supports:
-- Multiple translations from different sources
-- Definitions when available
-- Multiple example sentences with licensing
-- Premium content gating
-- Multi-source attribution
+- **Multiple jurisdictions** - Track legal terms from Netherlands, EU, international organizations, and 50+ countries
+- **Multiple translations from different sources** - Same term may have different translations from different legal systems
+- **Source attribution and provenance** - Track jurisdiction, source URL, and license for each translation
+- **SME review workflow** - Flag terms requiring expert verification (especially for new international sources)
+- **Definitions when available** - Context-specific legal definitions
+- **Multiple example sentences with licensing** - Real-world usage examples
+- **Premium content gating** - Support for freemium model
+- **Multi-language support** - 80+ languages from global legal sources
 
 ## File: `unified-dictionary.json`
 
@@ -24,7 +27,10 @@ This structure supports:
         "definition": "awaiting decision or settlement in legal proceedings",
         "source": "Burrough/Machon/Oranje/Frakes/Visser",
         "source-type": "Civil Procedure Glossary",
+        "source-url": null,
+        "jurisdiction": "NL",
         "license": "CC BY 4.0",
+        "license-url": "https://creativecommons.org/licenses/by/4.0/",
         "sme-reviewed": true,
         "context": "procedural law"
       },
@@ -34,9 +40,25 @@ This structure supports:
         "definition": null,
         "source": "Dutch Ministry of Finance",
         "source-type": "Legal Glossary",
+        "source-url": null,
+        "jurisdiction": "NL",
         "license": "CC0",
+        "license-url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "sme-reviewed": true,
         "context": "general legal"
+      },
+      {
+        "translation": "en cours",
+        "lang": "fr-fr",
+        "definition": "procédure en attente de décision",
+        "source": "EUR-Lex",
+        "source-type": "EU Legislation Corpus",
+        "source-url": "https://eur-lex.europa.eu/",
+        "jurisdiction": "EU",
+        "license": "CC BY 4.0",
+        "license-url": "https://creativecommons.org/licenses/by/4.0/",
+        "sme-reviewed": false,
+        "context": "EU procedural law"
       }
     ],
 
@@ -90,12 +112,15 @@ This structure supports:
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `translation` | string | Yes | The translated term (English) |
-| `lang` | string | Yes | Target language code (en-gb) |
+| `lang` | string | Yes | Target language code (en-gb, fr-fr, de-de, etc.) |
 | `definition` | string\|null | No | Dictionary definition of the translation |
-| `source` | string | Yes | Author/organization (e.g., "Burrough et al.") |
-| `source-type` | string | Yes | Type of source (e.g., "Legal Dictionary", "Glossary") |
-| `license` | string | Yes | License (CC0, CC BY 4.0, CC BY-NC 4.0, Proprietary) |
-| `sme-reviewed` | boolean | Yes | Subject Matter Expert reviewed |
+| `source` | string | Yes | Author/organization (e.g., "Burrough et al.", "EUR-Lex", "UN Parallel Corpus") |
+| `source-type` | string | Yes | Type of source (e.g., "Legal Dictionary", "Glossary", "Legislation Corpus", "Court Judgments") |
+| `source-url` | string | No | URL to original source document or database |
+| `jurisdiction` | string | Yes | Legal jurisdiction (e.g., "NL", "EU", "UN", "US", "ZA", "IN") |
+| `license` | string | Yes | License (CC0, CC BY 4.0, CC BY-NC-SA 3.0, CC BY-NC 4.0, OGL v3.0, Apache 2.0, Public Domain, Proprietary) |
+| `license-url` | string | No | URL to license text |
+| `sme-reviewed` | boolean | Yes | Subject Matter Expert reviewed (false for research-phase sources) |
 | `context` | string | No | Context/domain where this translation applies |
 
 ### Example Object
@@ -397,6 +422,64 @@ Before using the unified dictionary, validate:
    - Unified JSON: ~6-8 MB
    - Client-side indexing: ~50-100ms load time
    - Search: <10ms with proper indexing
+
+6. **International Source Attribution**: For global expansion
+   - **`jurisdiction`** field is REQUIRED for all new sources
+   - **`source-url`** should link to authoritative source document
+   - **`sme-reviewed: false`** for all research-phase sources until expert verification
+   - **`license-url`** ensures legal compliance
+   - Example: EUR-Lex term would have `jurisdiction: "EU"`, `source-url: "https://eur-lex.europa.eu/"`, `sme-reviewed: false`
+
+## Critical Fields for International Expansion
+
+### Jurisdiction Field
+**Purpose:** Indicates which legal system the term belongs to
+
+**Why Critical:** Legal terms have different meanings in different jurisdictions
+- "corporation" means different things in US law vs. UK law vs. EU law
+- "homicide" classifications differ between common law and civil law systems
+- Contract law concepts vary significantly across jurisdictions
+
+**Format:** ISO 3166-1 alpha-2 country codes or special codes
+- `NL` - Netherlands
+- `EU` - European Union
+- `US` - United States
+- `ZA` - South Africa
+- `IN` - India
+- `UN` - United Nations / International law
+- `CH` - Switzerland
+- `JP` - Japan
+- etc.
+
+### SME Review Flag
+**Purpose:** Distinguish verified terms from research-phase terms
+
+**Current Implementation (Netherlands):** `sme-reviewed: true`
+- All 3,400+ Netherlands terms have been reviewed by legal experts
+- Sources: Dutch Judiciary, Ministry of Finance, legal translation experts
+
+**Future Sources (International):** `sme-reviewed: false` initially
+- All 33 new international sources start with `false`
+- Requires review by legal experts from respective jurisdictions
+- Changed to `true` only after expert verification
+
+**UI Display:**
+- Show SME-reviewed badge for verified terms
+- Warning icon for unreviewed terms with disclaimer
+
+### Source URL Field
+**Purpose:** Enable verification and tracing to authoritative source
+
+**Examples:**
+- EUR-Lex: `https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679` (specific regulation)
+- UN Parallel Corpus: `https://conferences.unite.un.org/UNCorpus`
+- South Africa Constitution: `https://www.gov.za/documents/constitution-republic-south-africa-1996`
+
+**Benefits:**
+- Users can verify term accuracy
+- Enables legal citation and reference
+- Supports academic research
+- Ensures transparency and trust
 
 ## Questions for You
 
